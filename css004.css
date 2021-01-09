@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box; 
+}
+body {
+    font-family: Arial;
+    margin: 0;
+}
+.header {
+    background: #1abc9c;
+    padding: 60px;
+    text-align: center;
+    color: white;
+}
+.navbar {
+    background-color: #333;
+    display: flex; /*почему Флекс дает такой результат: увеличился блок с сылками по высоте?*/
+}
+.navbar a{
+    color: white; 
+    text-decoration: none;
+    padding: 14px 20px;
+    text-align: center;
+}
+
+.navbar a:hover {
+    background-color: antiquewhite;
+    color: #333;
+}
+
+.row {
+    display: flex; /* почему Флекс сделало Side вертикальным , как в образце, а добавив Flex=30%, опять вернулось в горизонтальный блок по всей ширине*/
+    flex-wrap: wrap; /*почему Wrap - в несколько строк, если тут только одна строка? */
+}
+.side {
+    flex: 30%;
+    background-color: aliceblue;
+    padding: 20px; /*почему Padding  убрал отступ между Navbar и Side*/ 
+}
+
+.main {
+    flex: 70%;
+    padding: 20px;
+    background-color: white;
+    display: inline-flex;
+    flex-direction: column;
+    height: 700px;
+    width: 900ps
+}
+.fakeimage {
+    background-color: #aaa;
+    padding: 20px;
+    width: 100%; /* зачем указывать ширину?*/
+    margin: 0 0 17px 0; /* ??? */
+}
+
+.col {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 5px;
+}
+.column, .column4 {
+    position: relative;
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.column, .column4 img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+.column img:hover{
+    transition: .8s ease-in-out;
+    transform: scale(2);
+    z-index: 1;
+    position: absolute;
+    left: 15%;
+}
+.column4 img:hover{
+    transition: .8s ease-in-out;
+    transform: scale(2);
+    z-index: 2; /* какой эфект дает*/
+    position: absolute;
+    right: 35%;
+}
+
+@media (max-width: 800px) {
+    .column, .column4{   
+        flex: 50%;
+        max-width: 50%;}
+}
+@media (max-width: 600px) {
+    .column, .column4{   
+        flex: 100%;
+        max-width: 100%;} /*зачем два раза прописывать Media?*/
+}
+@media (max-width: 800px)
+{ .navbar, .row
+    {
+        flex-direction: column;
+    }}
+
+
+
+

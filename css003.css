@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box; 
+}
+body {
+    font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    margin: 0;
+}
+.header-container{
+    background: #3a3a3a;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0 0.5);
+    display: flex;
+    justify-content: space-around;
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 90%;
+    align-items: center;
+}
+
+.header-menu {
+    display: flex;
+    /* justify-content: space-between; */
+    list-style: none;
+    padding-left: 0;
+}
+
+.header-menu-link{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: "SF Pro Text","Myriad Set Pro",    "SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    margin-right: 20px;
+    margin-left: auto;
+    letter-spacing: -.01em;
+    line-height: 3,14;
+    font-weight: 400;
+    opacity: .8;
+    transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    outline-offset: -7px;
+    -webkit-transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    -moz-transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    -ms-transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    -o-transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.logo  {
+margin-right: 0;
+}
+
+.header-menu-link:hover {
+    background-color: antiquewhite;
+    color: #333;
+}
+.row {
+    display: flex; /* почему Флекс сделало Side вертикальным , как в образце, а добавив Flex=30%, опять вернулось в горизонтальный блок по всей ширине*/
+    flex-wrap: wrap; /*почему Wrap - в несколько строк, если тут только одна строка? */
+    }
+.side {
+    flex: 30%;
+    background-color: aliceblue;
+    padding: 20px; /*почему Padding  убрал отступ между Navbar и Side*/ 
+    }
+
+.main {
+    flex: 70%;
+    padding: 20px;
+    background-color: white;
+}
+.fakeimage {
+    background-color: #aaa;
+    padding: 20px;
+    width: 100%; /* зачем указывать ширину?*/
+    margin: 0 0 17px 0; /* ??? */
+}
+.footer {
+    background-color: #ddd;
+    padding: 20px;
+    text-align: center;
+    }
+@media (max-width: 700px) {
+    .row, .navbar {
+        flex-direction: column;
+    }
+}
+
