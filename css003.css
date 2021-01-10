@@ -10,11 +10,20 @@ body {
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0 0.5);
     display: flex;
     justify-content: space-around;
+    max-height: 40px;
+
+}
+
+.fixed-top {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0; 
 }
 
 .header-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     max-width: 1200px;
     width: 90%;
     align-items: center;
@@ -32,7 +41,7 @@ body {
     text-decoration: none;
     font-size: 14px;
     font-family: "SF Pro Text","Myriad Set Pro",    "SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
-    margin-right: 20px;
+    margin-right: 60px;
     margin-left: auto;
     letter-spacing: -.01em;
     line-height: 3,14;
@@ -46,7 +55,7 @@ body {
     -o-transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-.logo  {
+.logo-home  {
 margin-right: 0;
 }
 
@@ -54,11 +63,23 @@ margin-right: 0;
     background-color: antiquewhite;
     color: #333;
 }
-.row {
+
+.name-container {
+    background-color: #fbfbfd;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.logo-img {
+    margin: 0;
+}
+
+.content {
     display: flex; /* почему Флекс сделало Side вертикальным , как в образце, а добавив Flex=30%, опять вернулось в горизонтальный блок по всей ширине*/
     flex-wrap: wrap; /*почему Wrap - в несколько строк, если тут только одна строка? */
     }
-.side {
+.sidebar {
     flex: 30%;
     background-color: aliceblue;
     padding: 20px; /*почему Padding  убрал отступ между Navbar и Side*/ 
@@ -67,7 +88,12 @@ margin-right: 0;
 .main {
     flex: 70%;
     padding: 20px;
-    background-color: white;
+    background-image: url(main_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    /* margin-bottom: -70px; */
+    /* position: relative; */
 }
 .fakeimage {
     background-color: #aaa;
@@ -81,7 +107,7 @@ margin-right: 0;
     text-align: center;
     }
 @media (max-width: 700px) {
-    .row, .navbar {
+    .content, .header-nav {
         flex-direction: column;
     }
 }
