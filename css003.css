@@ -11,7 +11,10 @@ body {
     display: flex;
     justify-content: space-around;
     max-height: 40px;
-
+    opacity: 0.95;
+}
+.header-container:hover {
+    opacity: 1.0;
 }
 
 .fixed-top {
@@ -74,35 +77,75 @@ margin-right: 0;
 .logo-img {
     margin: 0;
 }
+.content{
+    height: fit-content;
+}
+.content-section {
+    height: 800px;
+}
 
-.content {
-    display: flex; /* почему Флекс сделало Side вертикальным , как в образце, а добавив Flex=30%, опять вернулось в горизонтальный блок по всей ширине*/
-    flex-wrap: wrap; /*почему Wrap - в несколько строк, если тут только одна строка? */
-    }
-.sidebar {
-    flex: 30%;
-    background-color: aliceblue;
-    padding: 20px; /*почему Padding  убрал отступ между Navbar и Side*/ 
-    }
-
-.main {
-    flex: 70%;
-    padding: 20px;
-    background-image: url(main_bg.jpg);
+.img-container {
+    background-image: url(main2_bg.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     /* margin-bottom: -70px; */
     /* position: relative; */
+    /* z-index: 1030; */
+    background-position-x: center;
+    display: flex;
+    align-items: center;
 }
-.fakeimage {
-    background-color: #aaa;
-    padding: 20px;
-    width: 100%; /* зачем указывать ширину?*/
-    margin: 0 0 17px 0; /* ??? */
+
+.row-img-container {
+    width: 100%;
 }
+
+.row-text {
+color: #fbfbfd;
+display: flex;
+flex-direction: column;
+max-width: 40%;
+}
+
+.text {
+    text-align: center;
+    text-align: center;
+}
+
+.content-title{
+    margin: 0 0 10px 0;
+    font-size: 32px;
+    line-height: 1.125;
+    font-weight: 600;
+    letter-spacing: .002em;
+    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+.content-subtitle{
+    margin: 0;
+    font-size: 19px;
+    line-height: 1.21053;
+    font-weight: 400;
+    letter-spacing: .012em;
+    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    opacity: 0.8;
+}
+
+.video-container {
+    width: 100%;
+    background: #fbfbfd;
+    
+}
+
+.photo-container {
+    background: #000000;
+}
+
+
+
 .footer {
-    background-color: #ddd;
+    background-color: #fbfbfb;
     padding: 20px;
     text-align: center;
     }
