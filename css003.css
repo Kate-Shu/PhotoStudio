@@ -26,12 +26,15 @@ body {
 
 .header-wrapper {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     max-width: 1200px;
-    width: 90%;
+    width: 95%;
     align-items: center;
 }
 
+.header-nav {
+
+}
 .header-menu {
     display: flex;
     /* justify-content: space-between; */
@@ -56,6 +59,10 @@ body {
     -moz-transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
     -ms-transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
     -o-transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.menu-languages {
+    margin-right: 0;
 }
 
 .logo-home  {
@@ -158,34 +165,55 @@ max-width: 40%;
 .column {
     flex: 25%;
 }
-.column img:hover{
-    transition: .8s ease-in-out;
-    transform: scale(2);
-    z-index: 1;
-    position: absolute;
-    left: 15%;
-    -webkit-transform: scale(2);
-    -moz-transform: scale(2);
-    -ms-transform: scale(2);
-    -o-transform: scale(2);
-}
 
 .column img {
     max-width: 100%;
     padding: 7px;
+    cursor: pointer;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
 }
+.column-first img:hover:first-child ,
+.column-third img:hover:first-child {
+    transition: 1s ease-in-out;
+    transform: scale(1.5);
+    z-index: 1;
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
+}
+
+.column img:hover{
+    /*transition-delay: 3s;
+    */transition: 1s ease-in-out;
+    transform: scale(2);
+    z-index: 1;
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -ms-transform: scale(2);
+    -o-transform: scale(2);
+    -webkit-transition: 1s ease-in-out;
+    -moz-transition: 1s ease-in-out;
+    -ms-transition: 1s ease-in-out;
+    -o-transition: 1s ease-in-out;
+}
+
+.column-first img:hover:nth-child(2n){
+    padding-left: 35px;
+}
+
+
+.column-fourth img:hover{
+padding-right: 30px;
+}
+
 
 .column-second, .column-fourth {
     padding: 20px 7px 7px;
 }
-
-
-
-
-
-
-
-
 
 .footer {
     background-color: #fbfbfb;
