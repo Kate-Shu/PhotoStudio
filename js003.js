@@ -3,10 +3,10 @@ const rowImgContainer = document.querySelector('.row-img-container');
 setTimeout(() => rowImgContainer.classList.add('active'), 1000);
 
 //appearing photo
-const faderPhoto = document.querySelectorAll('.column');
+const faderPhoto = document.querySelectorAll('.photoColumn');
 const appearPtotoOptions = {
- threshold: 0.5,
- rootMargin: '0px 0px -100px 0px'
+ threshold: 0.1,
+ rootMargin: '0px 0px 10px 0px'
 };
 const appearPhotoOnScroll = new IntersectionObserver (function(entries, appearPhotoOnScroll){
  entries.forEach(entry => {
@@ -26,7 +26,7 @@ faderPhoto.forEach(fader => {
 const faderVideo = document.querySelectorAll('.video-item-section');
 const appearVideoOptions = {
  threshold: 0.5,
- rootMargin: '0px 0px -100px 0px'
+ rootMargin: '0px 0px -50px 0px'
 };
 
 const appearVideoOnScroll = new IntersectionObserver (function(entries, appearVideoOnScroll) {
