@@ -38,8 +38,15 @@ const appearVideoOnScroll = new IntersectionObserver (function(entries, appearVi
    appearVideoOnScroll.unobserve(entry.target);
   }
  });
-}, appearVideoOptions);
+}, 
+appearVideoOptions);
 
 faderVideo.forEach(fader => {
  appearVideoOnScroll.observe(fader);
 });
+
+// add icon after language
+// $('.languageswitcher').mouseover(function() {
+ // $('.languageswitcher').addClass('.languageswitcher:after');
+// });
+// 
