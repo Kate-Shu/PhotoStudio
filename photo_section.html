@@ -4,27 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <title>FotoVideo Studio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" -->
+        <!-- integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
+    <!-- <link rel="stylesheet" href="file:///Users/katerynaonufrichuk/Desktop/web/fontawesome-free-5.15.2-web/css/all.min.css">; -->
     <link rel="stylesheet" href="Styles/fontAwesome/all.min.css">
-    <link rel="stylesheet" href="css003.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/normalize.css">
+    <link rel="stylesheet" href="libraries/adaptive-menu.css">
+    <script src="libraries/adaptive-menu.js"></script>
+    <script src="script/script.js" defer></script>
 
 </head>
 
 <body>
     <!-- header -->
-    <header class="header-container fixed-top">
+    <header class="header-container fixed-top header-container-blur">
         <div class="header-wrapper ">
             <!-- header logo home btn-->
             <div class="header-logo-home link">
-                <a class="logo-home header-home-link" href="#">KateShu Studio</a>
+                <a class="logo-home header-home-link" href="/index.html">IgorVideo Studio</a>
             </div>
             <!-- header menu   -->
             <nav class="header-nav">
                 <ul class="header-menu">
                     <!-- menu items -->
                     <li class="header-menu-item li-size">
-                        <a class="header-menu-link" href="#">Photo</a>
+                        <a class="header-menu-link" href="photo_section.html">Photo</a>
                     </li>
                     <li class="header-menu-item li-size">
                         <a class="header-menu-link" href="#">Video</a>
@@ -35,11 +40,15 @@
                     <li class="header-menu-item li-size">
                         <a class="header-menu-link" href="#">Search</a>
                     </li>
-                    <li class="header-menu-item li-size">
-                        <a class="header-menu-link" href="#">Sign in</a>
+                    <li class="header-menu-item li-size item-account">
+                        <a class="header-menu-link accountswitcher" href="#">Login</a>
+                        <ul>
+                            <li> <a class="sign-in" href="#">Account</a> </li>
+                            <li> <a class="sign-up" href="#">Sign up</a> </li>
+                        </ul>
                     </li>
                     <li class="header-menu-item li-size">
-                        <a class="header-menu-link" href="#">Contact us</a>
+                        <a class="header-menu-link" href="#footer-container">Contact us</a>
                     </li>
                     <li class="header-menu-item  li-size selected-lang">
                         <a class="header-menu-link languageswitcher" href="#">Languages</a>
@@ -51,26 +60,42 @@
                         </ul>
                     </li>
                 </ul>
+                <div class="menu-burger"></div>
             </nav>
         </div>
     </header>
 
-    </div>
-    <div class=" photo-section photo-items">
+    <section class=" photo-section photo-items photo-section-blur">
         <div class="photo-columns columns-photosection">
             <div class="column column-first">
                 <div class="img-overlay-hidden img-overlay-icon">
                     <img class="img-photosection photoColumn" src="img/File_001(2).png " alt="photo">
                 </div>
+                
+                
+                
+
                 <div class="img-overlay-hidden img-overlay-icon">
                     <img class="img-photosection photoColumn" src="img/File_005.png " alt="photo">
                 </div>
+                
+                
+                
+
                 <div class="img-overlay-hidden img-overlay-icon">
                     <img class="img-photosection photoColumn" src="img/File_001.png " alt="photo">
                 </div>
+                
+                
+                
+
                 <div class="img-overlay-hidden img-overlay-icon">
                     <img class="img-photosection photoColumn" src="img/main_bg.jpg " alt="photo">
                 </div>
+                
+                
+                
+
             </div>
             <div class="column column-second">
                 <div class="img-overlay-hidden img-overlay-icon">
@@ -92,7 +117,6 @@
             <div class="column column-third">
                 <div class="img-overlay-hidden img-overlay-icon">
                     <img class="img-photosection photoColumn" src="img/File_002.png " alt="photo">
-                    <div class="overlay-icon-block"></div>
                 </div>
                 <div class="img-overlay-hidden img-overlay-icon">
                     <img class="img-photosection photoColumn" src="img/File_005.png " alt="photo">
@@ -139,16 +163,34 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <div class="modal-window-photo modal-prev modal-next ">
+        <div class="close-btn">
+        </div>
+        <img class= "modal-img" src="img/File_001(2).png " alt="photo">
     </div>
-    </div>
+    
+    
+    
+    
+    
+    <!-- <div class="img-overlay-hidden img-overlay-icon modal-container"> -->
+        <!-- <img class="img-photosection photoColumn modal-img" src="img/File_005.png " alt="photo"> -->
+    <!-- </div> -->
+    <!-- <div class="img-overlay-hidden img-overlay-icon modal-container"> -->
+        <!-- <img class="img-photosection photoColumn modal-img" src="img/File_001.png " alt="photo"> -->
+    <!-- </div> -->
+    <!-- <div class="img-overlay-hidden img-overlay-icon modal-container"> -->
+        <!-- <img class="img-photosection photoColumn modal-img" src="img/main_bg.jpg " alt="photo"> -->
+    <!-- </div> -->
 
-
-
+<!-- </section> -->
 
 
 
     <!-- footer -->
-    <footer class="footer-container">
+    <footer class="footer-container blur-footer" id="footer-container">
         <div class="footer-contacts-wrapper grid-section">
             <!-- footer media -->
             <div class="footer-media">
@@ -244,7 +286,6 @@
     </footer>
 
 
-    <script src="js003.js"></script>
 </body>
 
 </html>
