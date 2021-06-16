@@ -1,6 +1,5 @@
 /* normalize css */
-@import url(https://necolas.github.io/normalize.css/8.0.1/normalize.css) 
-* {
+@import url(https://necolas.github.io/normalize.css/8.0.1/normalize.css) * {
     box-sizing: border-box;
 }
 
@@ -165,7 +164,7 @@ body {
 }
 
 .selected-lang ul li,
-.item-account ul li{
+.item-account ul li {
     list-style: none;
     display: flex;
     justify-content: start;
@@ -176,7 +175,7 @@ body {
     display: block;
 }
 
-.selected-lang ul li a{
+.selected-lang ul li a {
     width: 100%;
     display: block;
     padding: 5px 10px;
@@ -184,7 +183,7 @@ body {
     color: #3a3a3a;
 }
 
-.item-account ul li a{
+.item-account ul li a {
     width: 100%;
     display: block;
     padding: 10px 10px;
@@ -555,6 +554,7 @@ body {
     background-color: #e7e8ed;
     width: 100%;
 }
+
 .footer-contacts-wrapper {
     width: 100%;
     height: 100%;
@@ -756,13 +756,13 @@ body {
     min-height: 100%;
 }
 
-.img-overlay-icon{
+.img-overlay-icon {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.img-overlay-icon:hover:before{
+.img-overlay-icon:hover:before {
     content: "\f002";
     font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands';
     font-weight: 900;
@@ -775,7 +775,8 @@ body {
 }
 
 /* modal window */
-.photo-section-blur, .header-container-blur{
+.photo-section-blur,
+.header-container-blur {
     transition: .5s;
     -webkit-transition: .5s;
     -moz-transition: .5s;
@@ -783,14 +784,16 @@ body {
     -o-transition: .5s;
 }
 
-.header-container-blur.active, .photo-section-blur.active{
+.header-container-blur.active,
+.photo-section-blur.active {
     filter: blur(10px);
     -webkit-filter: blur(10px);
     pointer-events: none;
     user-select: none;
+    z-index: -10;
 }
 
-.blur-footer{
+.blur-footer {
     transition: .5s;
     -webkit-transition: .5s;
     -moz-transition: .5s;
@@ -798,25 +801,26 @@ body {
     -o-transition: .5s;
 }
 
-.blur-footer.active{
+.blur-footer.active {
     filter: blur(10px);
     -webkit-filter: blur(10px);
     pointer-events: none;
     user-select: none;
 }
 
-.modal-window-photo{
-    /* display: none; */
+.modal-window-photo {
     visibility: hidden;
     opacity: 0;
     z-index: 1032;
-    height: 624px;
-    width:  416px;
-    position: fixed;
-    top: 40%;
-    left: 50%;
+    height: 95vh;
+    width: 65vh;
+    /*height: 624px;
+    *//*width: 416px;
+    */position: fixed;
+    top: 50vh;
+    left: 50vw;
     transform: translate(-50%, -50%);
-    border: solid 3px #d2d2d2;
+    border: solid 1px rgba(255, 255, 255, .3);
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -826,15 +830,28 @@ body {
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
-    transition: .5s !important;
-    -webkit-transition: .5s !important;
-    -moz-transition: .5s !important;
-    -ms-transition: .5s !important;
-    -o-transition: .5s !important;
-    overflow-y: auto;
+    transition: .5s ease !important;
+    -webkit-transition: .5s ease !important;
+    -moz-transition: .5s ease !important;
+    -ms-transition: .5s ease !important;
+    -o-transition: .5s ease !important;
+    overflow: auto;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.26), 0px 5px 8px rgba(0, 0, 0, 0.33);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
 }
 
-.modal-window-photo.active{
+.modal-img {
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+}
+
+.modal-window-photo.active {
     top: 50%;
     visibility: visible;
     /* display: block; */
@@ -845,68 +862,93 @@ body {
     -ms-transition: .5s;
     -o-transition: .5s;
 }
+
 /* add prew & next buttons  */
-.modal-prev:before{
-    content: "\f053";
-    font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands';
-    font-weight: 900;
-    color: #ffffff;
-    font-size: 30px;
+.arrow{
+    position: fixed;
+    top: 50%;
+    z-index: 1;
+    background-color: transparent;
+    padding: 5px;
+    font-size: 10px;
+    border: 2px solid whitesmoke;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    z-index: 1000000;
+    color: #fbfbfd;
     opacity: .5;
-    position: absolute;
-    top: 45%;
-    left: 0%;
-    cursor: pointer;
-    /* z-index: 1031; */
-}
-
-.modal-next:after{
-    content: "\f054";
-    font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands';
-    font-weight: 900;
-    color: #ffffff;
-    font-size: 30px;
-    opacity: .5;
-    position: absolute;
-    top: 45%;
-    right: 0%;
     cursor: pointer;
 }
 
-.modal-window-photo:hover:before{
+.arrow-left{
+    /* left: calc(50vh + 85px); */
+    left: 0;
+}
+
+.arrow-right{
+    /* right: calc(50vh + 85px); */
+    right: 0;
+}
+
+/* .modal-prev:before { */
+    /* content: "\f104"; */
+    /* font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands'; */
+    /* font-weight: 600; */
+    /* color: #ffffff; */
+    /* font-size: 30px; */
+    /* opacity: .5; */
+    /* position: absolute; */
+    /* top: 45%; */
+    /* left: 0%; */
+    /* cursor: pointer; */
+    /* z-index: 1; */
+/* } */
+
+/* .modal-next:after { */
+    /* content: "\f105"; */
+    /* font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands'; */
+    /* font-weight: 700; */
+    /* color: #ffffff; */
+    /* font-size: 30px; */
+    /* opacity: .5; */
+    /* position: absolute; */
+    /* top: 45%; */
+    /* right: 0%; */
+    /* cursor: pointer; */
+    /* z-index: 1; */
+/* } */
+
+.modal-window-photo:hover .arrow    {
     color: #ffffff;
     opacity: 1;
 }
 
-.modal-img{
-    width: 100%;
-    height: 100%;
-}
-
-.close-btn{
-    position: absolute;
+.close-btn {
+    position: fixed;
     top: 3px;
     right: 3px;
     cursor: pointer;
+    z-index: 1;
 }
 
-.close-btn:before{
+.close-btn:before {
     content: "\f057";
     font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands';
     font-weight: 500;
     color: #ffffff;
     font-size: 25px;
     opacity: .5;
-    /* z-index: 1031; */
 }
-.close-btn:hover:before,
-.close-btn:hover:after
-{
+
+.close-btn:hover:before {
     color: #ffffff;
     opacity: 1;
 }
 
-/* media request */
+
 @media (max-width: 700px) {
 
     .content,
