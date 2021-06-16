@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
  //appearing title
  const rowImgContainer = document.querySelector('.row-img-container');
- setTimeout(() => rowImgContainer.classList.add('activeAppear'), 1000);
+ // setTimeout(() => rowImgContainer.classList.add('activeAppear'), 1000);
  //except setTimeout for photo-section.html;
 
  //appearing photo
@@ -52,9 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
  });
 
  // modal window
- const imgOverlayHidden = document.querySelector('.img-overlay-hidden');
- const modalWindowPhoto = document.querySelector('.modal-window-photo');
- const closeBtn = document.querySelector('.close-btn');
+ const imgOverlayHiddens = document.querySelectorAll('.img-overlay-hidden');
+ const closeBtns = document.querySelectorAll('.close-btn');
  const blurHeader = document.querySelector('.header-container-blur');
  const blurPhotosection = document.querySelector('.photo-section-blur');
  const blurFooter = document.querySelector('.blur-footer');
@@ -62,8 +61,12 @@ document.addEventListener("DOMContentLoaded", () => {
  const arrowLeft = document.querySelector('.arrow-left');
  const arrowRight = document.querySelector('.arrow-right');
 
+ let activeModalImg = 0;
+ let imgOverlayHiddenClicked = 0;
+
+
  //to show modal with display:block, not visibility:
- // imgOverlayHidden.addEventListener('click', () => {
+ // imgOverlayHiddens.addEventListener('click', () => {
  // modalWindowPhoto.style.display = 'block';
  // modalWindowPhoto.style.opacity = '1';
  // modalWindowPhoto.style.transition =  '1s';
@@ -72,39 +75,68 @@ document.addEventListener("DOMContentLoaded", () => {
  // modalWindowPhoto.style.display = 'none';
  // }); 
 
- imgOverlayHidden.addEventListener('click', () => {
-  modalWindowPhoto.classList.toggle('active');
-  blurHeader.classList.toggle('active');
+ // imgOverlayHiddens.addEventListener('click', () => {
 
-  // blurHeader.style.display = 'none';//remove header
-  // blurPhotosection.style.margin = '0px';//put up photo section;
+ // modalImgs[activeModalImg].classList.add('active');
+ // modalImgs.classList.toggle('active');
+ // blurHeader.classList.toggle('active');
+ // blurHeader.style.display = 'none';//remove header
+ // blurPhotosection.style.margin = '0px';//put up photo section;
+ // blurPhotosection.classList.toggle('active');
+ // blurFooter.classList.toggle('active');
+ // });
 
-  blurPhotosection.classList.toggle('active');
-  blurFooter.classList.toggle('active');
+ imgOverlayHiddens.forEach(imgOverlayHidden => {
+  imgOverlayHidden.addEventListener('click', () => {
+   blurHeader.classList.toggle('active');
+   blurPhotosection.classList.toggle('active');
+   blurFooter.classList.toggle('active');
+   modalImgs[activeModalImg].classList.add('active');
+   // modalImgs[activeModalImg]  = imgOverlayHiddens[imgOverlayHiddenClicked];
+  })
  });
 
- closeBtn.addEventListener('click', () => {
-  modalWindowPhoto.classList.toggle('active');
-  blurHeader.classList.toggle('active');
-  blurHeader.style.display = 'flex';
-  blurPhotosection.style.margin = '50px 0px 0px 0px';
-  blurPhotosection.classList.toggle('active');
-  blurFooter.classList.toggle('active');
- });
+ closeBtns.forEach(closeBtn => {
+  closeBtn.addEventListener('click', () => {
+   blurHeader.classList.toggle('active');
+   blurHeader.style.display = 'flex';
+   blurPhotosection.style.margin = '50px 0px 0px 0px';
+   blurPhotosection.classList.toggle('active');
+   blurFooter.classList.toggle('active');
+   modalImgs.forEach((modalImg) => modalImg.classList.remove('active'));
+  })
+ })
 
+ // closeBtn.addEventListener('click', () => {
+ // modalImgs.classList.toggle('active');
+ // blurHeader.classList.toggle('active');
+ // blurHeader.style.display = 'flex';
+ // blurPhotosection.style.margin = '50px 0px 0px 0px';
+ // blurPhotosection.classList.toggle('active');
+ // blurFooter.classList.toggle('active');
+ // });
  // display:none vs visibility:hidden in photopage???
 
-let proactiveModalImg = 0;
+ arrowRight.addEventListener('click', () => {
+  activeModalImg++;
 
-arrowRight.addEventListener('click', () => {
- proactiveModalImg++;
+  if (activeModalImg > modalImgs.length - 1) {
+   activeModalImg = 0;
+  }
+  setActiveModalImg();
+ })
 
+ arrowLeft.addEventListener('click', () => {
+  activeModalImg--;
 
- setProactiveModalImg();
+  if (activeModalImg < 0) {
+   activeModalImg = modalImgs.length - 1;
+  }
+  setActiveModalImg();
+ })
+
+ function setActiveModalImg() {
+  modalImgs.forEach((modalImg) => modalImg.classList.remove('active'));
+  modalImgs[activeModalImg].classList.add('active');
+ }
 })
-
-function setProactiveModalImg(){
- modalImgs.forEach((modalImg) => modalImg.classList.remove('proactive'));
- modalImgs[proactiveModalImg].classList.add('proactive');
-}
-});
