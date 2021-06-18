@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
  //appearing title
  const rowImgContainer = document.querySelector('.row-img-container');
- // setTimeout(() => rowImgContainer.classList.add('activeAppear'), 1000);
+ setTimeout(() => rowImgContainer.classList.add('activeAppear'), 1000);
  //except setTimeout for photo-section.html;
 
  //appearing photo
