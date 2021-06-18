@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
  const modalImgs = document.querySelectorAll('.modal-img');
  const arrowLeft = document.querySelector('.arrow-left');
  const arrowRight = document.querySelector('.arrow-right');
+ const modalWindowPhotos = document.querySelectorAll('.modal-window-photo')
 
  let activeModalImg = 0;
  let imgOverlayHiddenClicked = 0;
@@ -91,7 +92,8 @@ document.addEventListener("DOMContentLoaded", () => {
    blurHeader.classList.toggle('active');
    blurPhotosection.classList.toggle('active');
    blurFooter.classList.toggle('active');
-   modalImgs[activeModalImg].classList.add('active');
+   modalImgs[activeModalImg].classList.add('active');   modalWindowPhotos.forEach(modalWindowPhoto => {modalWindowPhoto.classList.add('active')});
+   modalWindowPhotos.forEach(modalWindowPhoto => {modalWindowPhoto.classList.add('active')});
    // modalImgs[activeModalImg]  = imgOverlayHiddens[imgOverlayHiddenClicked];
   })
  });
@@ -104,6 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
    blurPhotosection.classList.toggle('active');
    blurFooter.classList.toggle('active');
    modalImgs.forEach((modalImg) => modalImg.classList.remove('active'));
+   modalWindowPhotos.forEach(modalWindowPhoto => {modalWindowPhoto.classList.remove('active')});
   })
  })
 

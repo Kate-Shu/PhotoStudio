@@ -823,6 +823,12 @@ body {
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
+    z-index: -10000;
+}
+
+.modal-window-photo.active{
+    z-index: 10000;
+    overflow: visible;
 }
 
 .modal-img {
@@ -832,9 +838,10 @@ body {
     background-size: cover;
     position: absolute;
 
+    overflow: hidden;
     visibility: hidden;
     opacity: 0;
-    z-index: 993200 !important;
+    z-index: -10000;
     border: solid 1px rgba(255, 255, 255, .3);
     border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -851,6 +858,7 @@ body {
 
 .modal-img.active {
     visibility: visible;
+    overflow: hidden;
     /* display: block; */
     opacity: 1;
     transition: .5s;
@@ -858,6 +866,7 @@ body {
     -moz-transition: .5s;
     -ms-transition: .5s;
     -o-transition: .5s;
+    z-index: 10000;
 }
 
 /* add prew & next buttons  */
