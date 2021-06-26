@@ -36,7 +36,7 @@ const createMenuBurger = (menuBurger) => {
 
 const updateMenu = (headerNav, headerMenu, menuBurger, burgerList, burgerBtn) => {
  const menuItems = headerMenu.querySelectorAll('amenu-item');
- const burgerItems = burgerList.querySelectorAll('amenu-item');
+ const burgerItems = burgerList.querySelectorAll('amenu-item');//!!!!!!
  
  const widthHeaderNav = headerNav.offsetWidth;
 
@@ -46,7 +46,7 @@ const updateMenu = (headerNav, headerMenu, menuBurger, burgerList, burgerBtn) =>
   return acc + elem.offsetWidth + parseFloat(getComputedStyle(elem).marginRight)
  }, 0) + burgerWidth;
 
- console.log(widthAllItems);
+ // console.log(widthAllItems);
 
 if(widthHeaderNav < widthAllItems){
  const lastItem = menuItems[menuItems.length - 1];
