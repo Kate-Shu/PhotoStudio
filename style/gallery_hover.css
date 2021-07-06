@@ -1,0 +1,144 @@
+:root {
+  --offset: 1rem;
+}
+
+*:before, *:after {
+  box-sizing: border-box;
+}
+
+#index-gallery .gallery-img:hover ~ li:last-child:after,
+#index-gallery .gallery-img:last-child:hover:after,
+#index-gallery .gallery-img:hover ~ .gallery-img:last-child:before,
+#index-gallery .gallery-img:last-child:hover:before {
+  opacity: 1;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+}
+#index-gallery .gallery-img:last-child:after,
+#index-gallery .gallery-img:last-child:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  pointer-events: none;
+  clip-path: polygon(var(--offset) var(--offset), var(--offset) calc(100% - var(--offset)), calc(100% - var(--offset)) calc(100% - var(--offset)), calc(100% - var(--offset)) var(--offset));
+  -webkit-clip-path: polygon(var(--offset) var(--offset), var(--offset) calc(100% - var(--offset)), calc 100%-var(--offset) calc(100% - var(--offset)), calc(100% - var(--offset) ) var(--offset));
+  opacity: 0;
+  transition: opacity 1s, transform 1s 1s, background 1s;
+  -webkit-transition: opacity 1s, transform 1s 1s, background 1s;
+  -moz-transition: opacity 1s, transform 1s 1s, background 1s;
+  -ms-transition: opacity 1s, transform 1s 1s, background 1s;
+  -o-transition: opacity 1s, transform 1s 1s, background 1s;
+}
+#index-gallery .gallery-img:last-child:after {
+  mix-blend-mode: multiply;
+  background: #aaafc3;
+}
+#index-gallery .gallery-img:last-child:before {
+  backdrop-filter: grayscale(100%) blur(2px);
+  -webkit-backdrop-filter: grayscale(100%) blur(2px);
+}
+
+.gallery-img:nth-child(1):hover ~ li:last-child:after {
+  background: #1A237E;
+}
+
+.gallery-img:nth-child(2):hover ~ li:last-child:after {
+  background: #b5a1b7;
+}
+
+.gallery-img:nth-child(3):hover ~ li:last-child:after {
+  background: #aaafc3;
+}
+
+.gallery-img:nth-child(4):hover ~ li:last-child:after {
+  background: #daa384;
+}
+
+.gallery-img:nth-child(5):hover ~ li:last-child:after {
+  background: #A5D6A7;
+}
+
+.gallery-img:nth-child(6):hover ~ li:last-child:after {
+  background: #6c4331;
+}
+
+.gallery-img:nth-child(7):hover ~ li:last-child:after {
+  background: #555;
+}
+
+.gallery-img:nth-child(8):hover ~ li:last-child:after {
+  background: #a88504;
+}
+
+.gallery-img:nth-child(9):hover ~ li:last-child:after {
+  background: #1A237E;
+}
+
+.gallery-img:nth-child(10):hover ~ li:last-child:after {
+  background: #b5a1b7;
+}
+
+.gallery-img:nth-child(11):hover ~ li:last-child:after {
+  background: #aaafc3;
+}
+
+.gallery-img:nth-child(12):hover ~ li:last-child:after {
+  background: #daa384;
+}
+
+.gallery-img:nth-child(13):hover ~ li:last-child:after {
+  background: #6c4331;
+}
+
+.gallery-img:nth-child(14):hover ~ li:last-child:after {
+  background: #555;
+}
+
+li:last-child:hover:after {
+  background: #a88504;
+}
+
+#index-gallery .gallery-img:last-child:after,
+#index-gallery .gallery-img:last-child:before {
+  left: 300%;
+  transform: translate3d(-200%, -50%, 0);
+  -webkit-transform: translate3d(-200%, -50%, 0);
+  -moz-transform: translate3d(-200%, -50%, 0);
+  -ms-transform: translate3d(-200%, -50%, 0);
+  -o-transform: translate3d(-200%, -50%, 0);
+}
+#index-gallery .gallery-img:nth-child(1):hover ~ li:last-child:after,
+#index-gallery .gallery-img:nth-child(1):hover ~ li:last-child:before {
+  transform: translate3d(-400%, -100%, 0);
+}
+#index-gallery .gallery-img:nth-child(2):hover ~ li:last-child:after,
+#index-gallery .gallery-img:nth-child(2):hover ~ li:last-child:before {
+  transform: translate3d(-300%, -100%, 0);
+}
+#index-gallery .gallery-img:nth-child(3):hover ~ li:last-child:after,
+#index-gallery .gallery-img:nth-child(3):hover ~ li:last-child:before {
+  transform: translate3d(-200%, -100%, 0);
+}
+#index-gallery .gallery-img:nth-child(4):hover ~ li:last-child:after,
+#index-gallery .gallery-img:nth-child(4):hover ~ li:last-child:before {
+  transform: translate3d(-100%, -100%, 0);
+}
+#index-gallery .gallery-img:nth-child(5):hover ~ li:last-child:after,
+#index-gallery .gallery-img:nth-child(5):hover ~ li:last-child:before {
+  transform: translate3d(0%, -100%, 0);
+}
+#index-gallery .gallery-img:nth-child(6):hover ~ li:last-child:after,
+#index-gallery .gallery-img:nth-child(6):hover ~ li:last-child:before {
+  transform: translate3d(-400%, 0%, 0);
+}
+#index-gallery li:last-child:hover:after,
+#index-gallery li:last-child:hover:before {
+  transform: translate3d(-300%, 0%, 0);
+}
+
+/*# sourceMappingURL=gallery_hover.css.map */

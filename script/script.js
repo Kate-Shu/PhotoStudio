@@ -49,6 +49,46 @@ document.addEventListener("DOMContentLoaded", () => {
   faderVideo.forEach(fader => {
     appearVideoOnScroll.observe(fader);
   });
+
+  // hide header while scrolling
+  let prevHeaderPos = window.pageYOffset;
+  let prevScrollPos = window.pageYOffset;
+  let headerContainer = document.querySelector('.header-container');
+  let scrollIndicator = document.querySelector('.scroll-indicator');
+  let headerPhotosection = document.querySelector('.header-photosection');
+
+  window.onscroll = function () {
+    let currentHeaderPos = window.pageYOffset;
+    let currentScrollPos = window.pageYOffset;
+
+    if (prevHeaderPos > currentHeaderPos) {
+      headerContainer.style.top = "0";
+      headerContainer.style.transition = "all 1s";
+      scrollIndicator.style.opacity = "1";
+      scrollIndicator.style.transition = "all 1s"
+    } 
+    else if (prevHeaderPos < currentHeaderPos) {
+      headerContainer.style.top = "-50px"
+      document.querySelector(".header-container").style.transition = "all 1.5s";
+      scrollIndicator.style.opacity = "0";
+      scrollIndicator.style.transition = "all 2s"
+    } 
+    else if (window.onload) {
+      return;
+    }
+
+    prevHeaderPos = currentHeaderPos;
+    prevScrollPos = currentScrollPos;
+  }
+
+  //change body background color
+  if (document.querySelector('.main-logo-container')) {
+    document.querySelector(".body").style.backgroundColor = "#fbfbfb";
+  } else if (document.querySelector('.photo-section')) {
+    document.querySelector(".body").style.backgroundColor = "#000000";
+  }
+
+
 })
 
 
@@ -59,7 +99,7 @@ let getLatestOpenImg;
 if (galleryImages) {
   galleryImages.forEach((image, index) => {
     image.addEventListener('click', () => {
-      //get let = img9.jpg
+      //get let = img999.jpg - name anf format pf the iamge
       let getElementCss = window.getComputedStyle(image);
       let getFullImgUrl = getElementCss.getPropertyValue('background-image');
       let getImgUrlPosition = getFullImgUrl.split('/img-gallery/thumbs/');
@@ -74,6 +114,7 @@ if (galleryImages) {
       container.appendChild(newImgWindow);
       newImgWindow.setAttribute('class', 'img-window');
       newImgWindow.style.backdropFilter = "blur(20px)";
+      document.querySelector(".body").style.overflow = "hidden";
       newImgWindow.setAttribute('onclick', 'closeImg()');
       //create an image element in the created div ImgWindow, and its src+ new individual Url
       let newImg = document.createElement('img');
@@ -111,6 +152,8 @@ function closeImg() {
   document.querySelector(".img-window").remove();
   document.querySelector(".img-btn-next").remove();
   document.querySelector(".img-btn-prev").remove();
+  document.querySelector(".body").style.overflow = "auto";
+
 }
 
 function changeImg(changeDir) {
@@ -134,7 +177,6 @@ function changeImg(changeDir) {
       calcNewImg = galleryImages.length;
     }
   }
-
   //set current image with 
   newImg.setAttribute("src", "img-gallery/img" + calcNewImg + ".jpg");
   newImg.setAttribute("id", "current-img");

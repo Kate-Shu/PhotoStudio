@@ -1,0 +1,102 @@
+:root {
+  --offset: 1rem;
+}
+
+$offset: var(--offset);
+
+@mixin moveInGrid ($cols, $n) {
+  $rows: ceil($n / $cols);
+
+  #index-gallery {
+
+    .gallery-img:last-child:after,
+    .gallery-img:last-child:before {
+      left: 100% * (($cols - $n) % $cols);
+      transform: translate3d(-100% * (($cols - 1) / 2), -100% * (($rows - 1) / 2), 0);
+      -webkit-transform: translate3d(-100% * (($cols - 1) / 2), -100% * (($rows - 1) / 2), 0);
+      -moz-transform: translate3d(-100% * (($cols - 1) / 2), -100% * (($rows - 1) / 2), 0);
+      -ms-transform: translate3d(-100% * (($cols - 1) / 2), -100% * (($rows - 1) / 2), 0);
+      -o-transform: translate3d(-100% * (($cols - 1) / 2), -100% * (($rows - 1) / 2), 0);
+}
+
+    @for $i from 1 through $n - 1 {
+      $x: ($cols - $i) % $cols;
+      $y: $rows - floor(($i - 1) / $cols) - 1;
+
+      .gallery-img:nth-child(#{$i}):hover~li:last-child:after,
+      .gallery-img:nth-child(#{$i}):hover~li:last-child:before {
+        transform: translate3d(-$x*100%, -$y*100%, 0);
+      }
+    }
+
+    li:last-child:hover:after,
+    li:last-child:hover:before {
+      transform: translate3d(-100% * (($cols - $n) % $cols), 0%, 0);
+    }
+  }
+}
+
+@mixin colors( $n, $colors ) {
+  @for $i from 1 through $n - 1 {
+    .gallery-img:nth-child(#{$i}):hover ~ li:last-child:after {
+      @if (nth($colors, $i)) {
+        background: nth($colors, $i);
+      }       
+    }
+  }
+  li:last-child:hover:after {
+    background: nth($colors, -1);   
+  }
+}
+
+*:before, *:after {
+  box-sizing: border-box;
+}
+
+#index-gallery{
+.gallery-img:hover ~ li:last-child:after,
+.gallery-img:last-child:hover:after,
+.gallery-img:hover ~ .gallery-img:last-child:before,
+.gallery-img:last-child:hover:before {
+  opacity: 1;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+}
+.gallery-img:last-child:after,
+.gallery-img:last-child:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  pointer-events: none;
+  clip-path:polygon($offset $offset, $offset calc(100% - #{$offset}), calc(100% - #{$offset}) calc(100% - #{$offset}), calc(100% - #{$offset}) $offset);
+  
+  -webkit-clip-path:polygon($offset $offset, $offset calc(100% - #{$offset}), calc (100% - #{$offset}) calc(100% - #{$offset}), calc(100% - #{$offset}
+  ) $offset);
+  opacity: 0;
+  transition: opacity 1s, transform 1s 1s, background 1s;
+  -webkit-transition: opacity 1s, transform 1s 1s, background 1s;
+  -moz-transition: opacity 1s, transform 1s 1s, background 1s;
+  -ms-transition: opacity 1s, transform 1s 1s, background 1s;
+  -o-transition: opacity 1s, transform 1s 1s, background 1s;
+}
+
+.gallery-img:last-child:after {
+  mix-blend-mode: multiply;
+  background: #aaafc3;
+}
+
+.gallery-img:last-child:before {
+  backdrop-filter: grayscale(100%) blur(2px);
+  -webkit-backdrop-filter: grayscale(100%) blur(2px);
+}
+}
+@include colors(15,[#1A237E, #b5a1b7, #aaafc3, #daa384, #A5D6A7, #6c4331, #555, #a88504, 
+#1A237E, #b5a1b7, #aaafc3, #daa384, #6c4331, #555, #a88504]);
+
+@include moveInGrid(5, 7);
+
