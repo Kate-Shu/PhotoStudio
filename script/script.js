@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
   //appearing video files
-  const faderVideo = document.querySelectorAll('.video-item-section');
+  const faderVideo = document.querySelectorAll('.video-item');
   const appearVideoOptions = {
     threshold: 0.5,
     rootMargin: '0px 0px -50px 0px'
@@ -55,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let prevScrollPos = window.pageYOffset;
   let headerContainer = document.querySelector('.header-container');
   let scrollIndicator = document.querySelector('.scroll-indicator');
-  let headerPhotosection = document.querySelector('.header-photosection');
 
   window.onscroll = function () {
     let currentHeaderPos = window.pageYOffset;
