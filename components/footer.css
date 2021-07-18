@@ -1,0 +1,134 @@
+  .footer-container {
+   background-color: #e7e8ed;
+   width: 100%;
+}
+.footer-contacts-wrapper {
+   width: 100%;
+   height: 100%;
+}
+.grid-section {
+   grid-area: footer-contacts-wrapper;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+}
+.footer-media {
+   display: flex;
+   justify-content: center;
+   align-content: center;
+}
+.footer-row {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.footer-title {
+   float: left;
+   width: 50%;
+   margin: 0px 20px;
+   font-weight: 300;
+   line-height: 1.5;
+   font-family: 'Noto Sans', sans-serif;
+   font-size: 19px;
+   color: #435464;
+   opacity: .85;
+   padding-right: 30px;
+}
+.footer-title h3 {
+   letter-spacing: 1.5px;
+   padding-bottom: 10px;
+}
+.footer-title h3:after {
+   display: block;
+   content: " ";
+   width: 30%;
+   height: 1px;
+   background: #39454B !important;
+   opacity: .5;
+   left: 20px;
+   margin-top: 8px;
+}
+.footer-title p {
+   font-size: 21px;
+   letter-spacing: 1, 5;
+}
+.media-contacts {
+   float: left;
+   margin: 0px 20px;
+   font-weight: 300;
+}
+.img-media-icon-content {
+   width: 30px;
+   height: 30px;
+   cursor: pointer;
+}
+.media-links-wrapper {
+   display: flex;
+   justify-content: space-around;
+   margin-bottom: 20px;
+}
+.media-contacts-block {
+   display: flex;
+   align-items: center;
+   margin-bottom: 25px;
+   width: 100%;
+   cursor: pointer;
+}
+.mail-icon {
+   margin-bottom: 0;
+}
+.media-contacts-block img {
+   margin-right: 20px;
+   width: 30px;
+}
+.media-contacts-block a {
+   font-size: 19px;
+   color: #435464;
+   opacity: .85;
+   text-decoration: none;
+}
+.footer-maps {
+   padding: 10px 15px;
+}
+.allmaps-wrapper {
+   width: 90%;
+   margin: auto;
+}
+.branch-title-wrapper {
+   display: flex;
+   justify-content: center;
+   padding-bottom: 10px;
+}
+.branch-title {
+   width: fit-content;
+   font-weight: 450;
+   opacity: .85;
+   font-size: 22px;
+   color: #435464;
+   font-weight: 300;
+   letter-spacing: 2;
+}
+.ukr-branch-container {
+   padding-bottom: 20px;
+}
+.map-wrapper {
+   box-shadow: 1px 1px 15px grey;
+   height: 220px;
+}
+.footer-block-copyright {
+   padding-bottom: 10px;
+}
+.footer-copyright-wrapper {
+   display: flex;
+   justify-content: center;
+}
+.footer-copyright-content {
+   color: #333;
+   font-size: 12px;
+}
+.blur-footer {
+   transition: .5s;
+   -webkit-transition: .5s;
+   -moz-transition: .5s;
+   -ms-transition: .5s;
+   -o-transition: .5s;
+}

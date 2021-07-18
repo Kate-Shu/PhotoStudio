@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   //appearing title
   const rowImgContainer = document.querySelector('.row-img-container');
   setTimeout(() => rowImgContainer.classList.add('activeAppear'), 1000);
-  //except setTimeout for photo-section.html;
 
   //appearing photo
   const faderPhoto = document.querySelectorAll('.img-appear');
@@ -56,10 +55,10 @@ document.addEventListener("DOMContentLoaded", () => {
   let headerContainer = document.querySelector('.header-container');
   let scrollIndicator = document.querySelector('.scroll-indicator');
 
+
   window.onscroll = function () {
     let currentHeaderPos = window.pageYOffset;
     let currentScrollPos = window.pageYOffset;
-
     if (prevHeaderPos > currentHeaderPos) {
       headerContainer.style.top = "0";
       headerContainer.style.transition = "all 1s";
@@ -75,7 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
     else if (window.onload) {
       return;
     }
-
     prevHeaderPos = currentHeaderPos;
     prevScrollPos = currentScrollPos;
   }
@@ -86,10 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
   } else if (document.querySelector('.photo-section')) {
     document.querySelector(".body").style.backgroundColor = "#000000";
   }
-
-
 })
-
 
 // slider gallery
 let galleryImages = document.querySelectorAll('.gallery-img');
@@ -199,3 +194,76 @@ function changeImg(changeDir) {
     prevBtn.style.cssText = "left: " + calcImgToEdge + "px;";
   }
 }
+
+// pop up validation
+const inputName = document.querySelectorAll('.input')[0];
+const inputPhone = document.querySelectorAll('.input')[1];
+const inputMail = document.querySelectorAll('.input')[2];
+const errMessageName = document.querySelectorAll('.error-message')[0];
+const errMessagePhone = document.querySelectorAll('.error-message')[1];
+const errMessageMail = document.querySelectorAll('.error-message')[2];
+const form = document.querySelector('.form');
+const applyBtn = document.querySelector('.btn');
+const modalOverlay = document.querySelector('.modal-overlay');
+const modal = document.querySelector('.modal');
+const btnGoHomepage = document.querySelector('.go-homepage');
+const pop = document.querySelector('.pop');
+
+const regExpValidName = /^[a-zA-ZА-Яа-я\s]+$/;
+const regExpValidPhone = /^\+?[0-9\s]+$/;
+// const regExpValidEmail = /^\w+@\w+\.\w{2,}$/; 
+// const regExpValidEmail = /^[a-zA-ZА-Яа-я]\@[a-zA-ZА-Яа-я]\.[a-zA-ZА-Яа-я]+$/;
+
+
+const validData = {
+  getFeedback(name, phone, form, btnhome) {
+
+    name.addEventListener('focusout', () => {
+      if (name.value != '') {
+        name.value = name.value[0].toUpperCase() + name.value.slice(1);
+      }
+      return;
+    });
+
+    name.addEventListener('keypress', event => {
+      if (!regExpValidName.test(event.key)) {
+        errMessageName.style.opacity = '0.8';
+        event.preventDefault();
+      } else {
+        errMessageName.style.opacity = '0';
+      }
+    });
+
+    phone.addEventListener('keypress', event => {
+      if (!regExpValidPhone.test(event.key)) {
+        errMessagePhone.style.opacity = '0.8';
+        event.preventDefault();
+      } else {
+        errMessagePhone.style.opacity = '0';
+      }
+    });
+
+    // mail.addEventListener('keypress', event => {
+    //  if(!regExpValidEmail.test(event.key)){
+      // errMessageMail.style.opacity = '0.8';
+      // event.preventDefault();
+    //  }else{
+      // errMessageMail.style.opacity = '0';
+    //  }
+    // });
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault(); 
+      modalOverlay.classList.add('open');
+
+    });
+
+    btnhome.setAttribute('onclick', 'location.href = "index.html"');
+
+  }
+};
+
+const init = () => {
+  validData.getFeedback(inputName, inputPhone, form, btnGoHomepage );
+};
+document.addEventListener('DOMContentLoaded', init);
