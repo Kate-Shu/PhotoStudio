@@ -545,12 +545,25 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    cursor: pointer;
-    transition: all 500ms;
-    -webkit-transition: all 500ms;
-    -moz-transition: all 500ms;
-    -ms-transition: all 500ms;
-    -o-transition: all 500ms;
+    cursor: pointer; 
+    /*transition: all 500ms;
+    */
+    /*-webkit-transition: all 500ms;
+    */
+    /*-moz-transition: all 500ms;
+    */
+    /*-ms-transition: all 500ms;
+    */
+    /*-o-transition: all 500ms;
+    */
+    transition: opacity .3s ease-out;
+    -webkit-transition: opacity .3s ease-out;
+    -moz-transition: opacity .3s ease-out;
+    -ms-transition: opacity .3s ease-out;
+    -o-transition: opacity .3s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #index-gallery .img1 {
@@ -636,34 +649,61 @@ body {
 .gallery-img div {
     width: 100%;
     height: 100%;
-    background-color: #000000;
-    opacity: 0;
-    display: flex;
+    /*background-color: #000000;
+    *//*opacity: 0;
+    */display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .gallery-img a {
     font-size: 18px;
-    color: #f8f8f8;
+    color: rgba(0, 0, 0, .6);
     text-decoration: none;
     text-transform: capitalize;
-    border: #e7e8ed solid 1px;
+    border: rgba(0, 0, 0, .6) solid 1px;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
     padding: 10px;
+    opacity: 0;
+    transition: opacity .5s ease-in;
+    -webkit-transition: opacity .5s ease-in;
+    -moz-transition: opacity .5s ease-in;
+    -ms-transition: opacity .5s ease-in;
+    z-index: 10;
+    -o-transition: opacity .5s ease-in;
 }
 
-.gallery-img div:hover {
-    opacity: .7;
-    transition: all ease-in-out 100ms;
-    -webkit-transition: all ease-in-out 100ms;
-    -moz-transition: all ease-in-out 100ms;
-    -ms-transition: all ease-in-out 100ms;
-    -o-transition: all ease-in-out 100ms;
+.gallery-img:hover a{
+    opacity: 1;
+}
+
+/* .gallery-img div:hover { */
+/* opacity: .7; */
+/* transition: all ease-in-out 100ms; */
+/* -webkit-transition: all ease-in-out 100ms; */
+/* -moz-transition: all ease-in-out 100ms; */
+/* -ms-transition: all ease-in-out 100ms; */
+/* -o-transition: all ease-in-out 100ms; */
+/* opacity: 1; */
+/* } */
+
+.box-target {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    transition: transform .9s ease-in-out, width .7s ease-in, height .4s ease-in-out, all .9s;
+    -webkit-transition: transform .9s ease-in-out, width .7s ease-in, height .4s ease-in-out, all .9s;
+    -moz-transition: transform .9s ease-in-out, width .7s ease-in, height .4s ease-in-out, all .9s;
+    -ms-transition: transform .9s ease-in-out, width .7s ease-in, height .4s ease-in-out, all .9s;
+    -o-transition: transform .9s ease-in-out, width .7s ease-in, height .4s ease-in-out, all .9s;
+    background: rgba(255, 255, 255, .5) ;
 }
 
 .img-window {
@@ -737,6 +777,7 @@ body {
 }
 
 /* scroll indicator */
+
 .scroll-indicator {
     position: absolute;
     top: 85vh;
@@ -747,7 +788,6 @@ body {
     /* -moz-transform: translate(-50%, -50%); */
     /* -ms-transform: translate(-50%, -50%); */
     /* -o-transform: translate(-50%, -50%); */
-
 }
 
 .scroll-indicator span {

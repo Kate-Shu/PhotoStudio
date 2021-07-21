@@ -4,7 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //appearing title
   const rowImgContainer = document.querySelector('.row-img-container');
-  setTimeout(() => rowImgContainer.classList.add('activeAppear'), 1000);
+  setTimeout(() => {
+    if (rowImgContainer) {
+      rowImgContainer.classList.add('activeAppear');
+    }
+  }, 1000);
 
   //appearing photo
   const faderPhoto = document.querySelectorAll('.img-appear');
@@ -62,16 +66,18 @@ document.addEventListener("DOMContentLoaded", () => {
     if (prevHeaderPos > currentHeaderPos) {
       headerContainer.style.top = "0";
       headerContainer.style.transition = "all 1s";
-      scrollIndicator.style.opacity = "1";
-      scrollIndicator.style.transition = "all 1s"
-    } 
-    else if (prevHeaderPos < currentHeaderPos) {
+      if (scrollIndicator) {
+        scrollIndicator.style.opacity = "1";
+        scrollIndicator.style.transition = "all 1s"
+      }
+    } else if (prevHeaderPos < currentHeaderPos) {
       headerContainer.style.top = "-50px"
       document.querySelector(".header-container").style.transition = "all 1.5s";
-      scrollIndicator.style.opacity = "0";
-      scrollIndicator.style.transition = "all 2s"
-    } 
-    else if (window.onload) {
+      if (scrollIndicator) {
+        scrollIndicator.style.opacity = "0";
+        scrollIndicator.style.transition = "all 2s"
+      }
+    } else if (window.onload) {
       return;
     }
     prevHeaderPos = currentHeaderPos;
@@ -80,11 +86,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //change body background color
   if (document.querySelector('.main-logo-container')) {
-    document.querySelector(".body").style.backgroundColor = "#fbfbfb";
-  } else if (document.querySelector('.photo-section')) {
-    document.querySelector(".body").style.backgroundColor = "#000000";
+    let body = document.querySelector(".body");
+    if (body) {
+      body.style.backgroundColor = "#fbfbfb";
+    }
+  } else if (wrapperGallery) {
+    let body = document.querySelector(".body");
+    if (body) {
+      body.style.backgroundColor = "#000000";
+    }
   }
-})
+});
+
+
 
 // slider gallery
 let galleryImages = document.querySelectorAll('.gallery-img');
@@ -195,6 +209,41 @@ function changeImg(changeDir) {
   }
 }
 
+
+// hover effect for the gallery
+var boxes = document.querySelectorAll('.gallery-img');
+var hoverBox = document.querySelector('.box-target');
+let wrapperGallery = document.querySelector('.wrapper-gallery');
+let prevScrollY = window.pageYOffset;
+
+function position(arg, box) {
+  pos = arg.target;
+  hoverBox.style.height = (pos.offsetHeight - 30) + 'px';
+  hoverBox.style.width = (pos.offsetWidth - 30) + 'px';
+  hoverBox.style.transform = "translate(" + (box.offsetLeft + 15) + 'px,' + (box.offsetTop - window.pageYOffset + 15) + "px)";
+
+  let prevHoverBoxPos = box.offsetTop;
+  if (window.scroll) {
+    let currHoverBoxPos = box.offsetTop;
+    currHoverBoxPos = prevHoverBoxPos;
+  }
+
+};
+
+boxes.forEach(box => {
+  box.addEventListener('mouseenter', (mousePosition) => {
+    position(mousePosition, box);
+    hoverBox.style.background = '#eef2f4';
+    hoverBox.style.opacity = .5;
+  });
+});
+
+wrapperGallery.addEventListener('mouseleave', () => {
+  // hoverBox.style.height = 0 + 'px';
+  // hoverBox.style.width = 0 + 'px';
+  hoverBox.style.background = 'transparent';
+});
+
 // pop up validation
 const inputName = document.querySelectorAll('.input')[0];
 const inputPhone = document.querySelectorAll('.input')[1];
@@ -218,52 +267,61 @@ const regExpValidPhone = /^\+?[0-9\s]+$/;
 const validData = {
   getFeedback(name, phone, form, btnhome) {
 
-    name.addEventListener('focusout', () => {
-      if (name.value != '') {
-        name.value = name.value[0].toUpperCase() + name.value.slice(1);
-      }
-      return;
-    });
+    if (name) {
+      name.addEventListener('focusout', () => {
+        if (name.value != '') {
+          name.value = name.value[0].toUpperCase() + name.value.slice(1);
+        }
+        return;
+      });
 
-    name.addEventListener('keypress', event => {
-      if (!regExpValidName.test(event.key)) {
-        errMessageName.style.opacity = '0.8';
-        event.preventDefault();
-      } else {
-        errMessageName.style.opacity = '0';
-      }
-    });
+      name.addEventListener('keypress', event => {
+        if (!regExpValidName.test(event.key)) {
+          errMessageName.style.opacity = '0.8';
+          event.preventDefault();
+        } else {
+          errMessageName.style.opacity = '0';
+        }
+      });
+    }
 
-    phone.addEventListener('keypress', event => {
-      if (!regExpValidPhone.test(event.key)) {
-        errMessagePhone.style.opacity = '0.8';
-        event.preventDefault();
-      } else {
-        errMessagePhone.style.opacity = '0';
-      }
-    });
+    if (phone) {
+      phone.addEventListener('keypress', event => {
+        if (!regExpValidPhone.test(event.key)) {
+          errMessagePhone.style.opacity = '0.8';
+          event.preventDefault();
+        } else {
+          errMessagePhone.style.opacity = '0';
+        }
+      });
+    }
+
 
     // mail.addEventListener('keypress', event => {
     //  if(!regExpValidEmail.test(event.key)){
-      // errMessageMail.style.opacity = '0.8';
-      // event.preventDefault();
+    // errMessageMail.style.opacity = '0.8';
+    // event.preventDefault();
     //  }else{
-      // errMessageMail.style.opacity = '0';
+    // errMessageMail.style.opacity = '0';
     //  }
     // });
 
-    form.addEventListener('submit', (event) => {
-      event.preventDefault(); 
-      modalOverlay.classList.add('open');
+    if (form) {
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        modalOverlay.classList.add('open');
 
-    });
+      });
+    }
 
-    btnhome.setAttribute('onclick', 'location.href = "index.html"');
+    if (btnhome) {
+      btnhome.setAttribute('onclick', 'location.href = "index.html"');
+    }
 
   }
 };
 
 const init = () => {
-  validData.getFeedback(inputName, inputPhone, form, btnGoHomepage );
+  validData.getFeedback(inputName, inputPhone, form, btnGoHomepage);
 };
 document.addEventListener('DOMContentLoaded', init);
