@@ -50,12 +50,9 @@ if (galleryImages) {
 
       //create variable for body
       let container = document.body;
-      let wrapperNewImg = document.createElement('div');
-      container.append(wrapperNewImg);
-      wrapperNewImg.setAttribute('class', 'wrapper-newimage')
       //create div, attached in body, for modal window - new fullscreen image
       let newImgWindow = document.createElement('div');
-      wrapperNewImg.appendChild(newImgWindow);
+      container.appendChild(newImgWindow);
       newImgWindow.setAttribute('class', 'img-window');
       newImgWindow.style.backdropFilter = "blur(20px)";
       document.querySelector(".body").style.overflow = "hidden";
@@ -120,7 +117,7 @@ if (galleryImages) {
 
         function animation(){
 
-          if(isDragging) requestAnimationFrame(animation);
+          if(isDragging) requestAnimationFrame(animation)
         }
 
       }
