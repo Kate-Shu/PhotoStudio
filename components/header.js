@@ -12,7 +12,7 @@ class Header extends HTMLElement {
   <header class="header-container fixed-top">
   <div class="header-wrapper">
       <div class="header-logo-home link">
-          <a class="logo-home header-home-link" href="/index.html">KateShu&nbsp;Studio</a>
+          <a class="logo-home header-home-link" href="index.html">KateShu&nbsp;Studio</a>
       </div>
       <nav class="header-nav">
           <ul class="header-menu">
@@ -23,7 +23,7 @@ class Header extends HTMLElement {
                   <a class="header-menu-link" href="#">Video</a>
               </li>
               <li class="header-menu-item li-size">
-                  <a class="header-menu-link" href="apply.html">Apply</a>
+                  <a class="header-menu-link" href="form.html">Apply</a>
               </li>
               <li class="header-menu-item li-size">
                   <a class="header-menu-link" href="#footer-container">Contact&nbsp;us</a>

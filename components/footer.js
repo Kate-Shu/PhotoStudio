@@ -12,7 +12,6 @@ class Footer extends HTMLElement{
   <footer class="footer-container" id="footer-container">
   <div class="footer-contacts-wrapper grid-section">
       <div class="footer-media">
-          <div class="footer-row">
               <div class="footer-title">
                   <h3>Keep in touch . . .</h3>
                   <p>Follow us to receive exclusive deals and all our latest news and offers.</p>
@@ -34,10 +33,6 @@ class Footer extends HTMLElement{
                       <img src="svg/telegram-brands.svg" alt="telegram">
                       <a href="tel:+971563384329" class="whatsapp-number">+380977777777</a>
                   </div>
-                  <div class="whatsApp-icon media-contacts-block">
-                      <img src="svg/whatsapp-square-brands.svg" alt="whatsApp">
-                      <a href="tel:+971563384329" class="whatsapp-number">+380977777777</a>
-                  </div>
                   <div class="viber-icon media-contacts-block">
                       <img src="svg/viber-brands.svg" alt="viber">
                       <a href="tel:+971563384329" class="viber-number">+380977777777</a>
@@ -47,7 +42,7 @@ class Footer extends HTMLElement{
                       <a href="tel:+971563384329" class="mail-address">k.onufrichuk.@gmail.com</a>
                   </div>
               </div>
-          </div>
+          
       </div>
       <div class="footer-maps">
           <div class="allmaps-wrapper ">
