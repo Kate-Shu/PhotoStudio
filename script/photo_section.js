@@ -1,3 +1,4 @@
+//https://www.youtube.com/watch?v=aOw6Y64op2U
 // hover effect for the gallery
 var boxes = document.querySelectorAll('.gallery-img');
 var hoverBox = document.querySelector('.box-target');
@@ -33,6 +34,7 @@ if (wrapperGallery) {
   });
 }
 
+// https://www.youtube.com/watch?v=dkLpo4shS6c&t=2450s
 // slider gallery
 let galleryImages = document.querySelectorAll('.gallery-img');
 let windowWidth = window.innerWidth;
@@ -63,13 +65,10 @@ if (galleryImages) {
       newImg.setAttribute('src', 'img-gallery/' + setNewImgUrl);
       newImg.setAttribute('id', 'current-img');
 
-
-      //touch event for mobile
-      // if (windowWidth < 701){
-      // console.log(windowWidth);
+     // https://www.youtube.com/watch?v=YxMtL6lJbZw
+     //https://www.youtube.com/watch?v=5bxFSOA5JYo&t=1580s
 
       if (newImgWindow) {
-
         //disable context menu while slider is open
         window.oncontextmenu = function () {
           return false;
@@ -77,9 +76,7 @@ if (galleryImages) {
 
         let isDragging = false,
           startPos = 0,
-          currentTranslate = 0,
-          prevTranslate = 0,
-          animationId = 0,
+          // currentTranslate = 0,
           currentIndex = 0;
 
         newImg.addEventListener('dragstart', (e) => {
@@ -96,33 +93,33 @@ if (galleryImages) {
             startPos = getPositionX(event);
             isDragging = true;
             console.log(startPos);
-
-            animationId = requestAnimationFrame(animation)
           }
-        }
+        };
+
+        function touchMove(event) {
+          if (isDragging) {
+            console.log('move');
+            const currentPos = getPositionX(event);
+            console.log(currentPos);
+            const currentTranslate = currentPos - startPos;
+            console.log(currentTranslate);
+          
+            if(currentTranslate > 0){
+              changeImg(1);
+            }else{
+              changeImg(0);
+            }
+          }
+        };
 
         function touchEnd() {
           isDragging = false;
-        }
-
-        function touchMove() {
-          if (isDragging) {
-            console.log('move');
-          }
-        }
+        };
 
         function getPositionX(event){
           return event.touches[0].clientX;
         }
-
-        function animation(){
-
-          if(isDragging) requestAnimationFrame(animation)
-        }
-
       }
-      // }
-
 
       // create next and prev buttons
       newImg.onload = function () {

@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  //call amenu()-func for burger;
-  // amenu('.header-nav', '.header-menu', '.header-menu-item', '.menu-burger');
+  amenu('.menu','.menu__list','.menu__item','.menu__burger');
+  // amenu('.header-nav', '.header-menu', '.header-menu-item', '.header-menu-link', '.menu-burger');
+
+
+
 
   //appearing title
   const rowImgContainer = document.querySelector('.row-img-container');
@@ -103,8 +106,12 @@ photoColumns.forEach(photoColumn => {
   photoColumn.setAttribute('onclick', 'location.href = "photo_section.html"');
 });
 
+//burger menu
+
+
+
 });
 
 
 
-document.addEventListener('DOMContentLoaded', init);
+// document.addEventListener('DOMContentLoaded', init);

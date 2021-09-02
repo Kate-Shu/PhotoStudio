@@ -14,21 +14,21 @@ class Header extends HTMLElement {
       <div class="header-logo-home link">
           <a class="logo-home header-home-link" href="index.html">KateShu&nbsp;Studio</a>
       </div>
-      <nav class="header-nav">
-          <ul class="header-menu">
-              <li class="header-menu-item li-size">
+      <nav class="header-nav menu">
+          <ul class="header-menu menu__list">
+              <li class="header-menu-item li-size menu__item">
                   <a class="header-menu-link" href="photo_section.html">Photo</a>
               </li>
-              <li class="header-menu-item li-size">
+              <li class="header-menu-item li-size menu__item">
                   <a class="header-menu-link" href="#">Video</a>
               </li>
-              <li class="header-menu-item li-size">
+              <li class="header-menu-item li-size menu__item">
                   <a class="header-menu-link" href="form.html">Apply</a>
               </li>
-              <li class="header-menu-item li-size">
+              <li class="header-menu-item li-size menu__item">
                   <a class="header-menu-link" href="#footer-container">Contact&nbsp;us</a>
               </li>
-              <li class="header-menu-item  li-size selected-lang">
+              <li class="header-menu-item  li-size menu__item selected-lang">
                   <a class="header-menu-link languageswitcher" href="#">Languages</a>
                   <ul>
                       <li> <a class="en" href="#">English</a> </li>
@@ -38,7 +38,7 @@ class Header extends HTMLElement {
                   </ul>
               </li>
           </ul>
-          <div class="menu-burger"></div>
+          <div class="menu-burger menu__burger"></div>
       </nav>
   </div>
 </header>
