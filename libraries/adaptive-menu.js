@@ -36,7 +36,7 @@
     return [burgerBtn, burgerList];
   };
 
-  const updateMenu = (menu, menuList, burgerMenu, burgerBtn, burgerList) => { 
+  const updateMenu = (menu, menuList, burgerMenu, burgerBtn, burgerList) => {
     const menuItems = menuList.querySelectorAll('.amenu__item'); //look for element with class .amenu__items over the element menuList,not over all document;
     const burgerItems = burgerList.querySelectorAll('.amenu__item');
 
@@ -48,17 +48,17 @@
     }, 0) + burgerWidth;
     console.log(widthAllItems);
 
-    if (widthMenu < widthAllItems){ //when current widthMenu becomes shorter during narowing than widthAllItems;
+    if (widthMenu < widthAllItems) { //when current widthMenu becomes shorter during narowing than widthAllItems;
       const lastItem = menuItems[menuItems.length - 1]; //get last item;
       lastWidthItems = lastItem.offsetWidth + parseFloat(getComputedStyle(lastItem).marginRight);
-      burgerList.prepend(lastItem);//take from menuItems(menuList) and add in burgerList;
-      return updateMenu (menu, menuList, burgerMenu, burgerBtn, burgerList); //recursion
+      burgerList.prepend(lastItem); //take from menuItems(menuList) and add in burgerList;
+      return updateMenu(menu, menuList, burgerMenu, burgerBtn, burgerList); //recursion
     };
 
-    if (widthMenu > widthAllItems + lastWidthItems && burgerItems.length){
-      const firstElem = burgerItems[0];//take 1st item from burger;
-      menuList.append(firstElem);//return 1st elem from burger to menuList;
-      return updateMenu (menu, menuList, burgerMenu, burgerBtn, burgerList);
+    if (widthMenu > widthAllItems + lastWidthItems && burgerItems.length) {
+      const firstElem = burgerItems[0]; //take 1st item from burger;
+      menuList.append(firstElem); //return 1st elem from burger to menuList;
+      return updateMenu(menu, menuList, burgerMenu, burgerBtn, burgerList);
     };
 
     checkBurgerItems(burgerItems.length, burgerBtn);
@@ -87,37 +87,82 @@
 
   // touch-events
   const isMobile = {
-    Android: function(){
+    Android: function () {
       return navigator.userAgent.match(/Android/i);
     },
-    BlackBerry: function(){
+    BlackBerry: function () {
       return navigator.userAgent.match(/BlackBerry/i);
     },
-    iOS: function(){
+    iOS: function () {
       return navigator.userAgent.match(/iPhone|iPad|iPod/i);
     },
-    Opera: function(){
+    Opera: function () {
       return navigator.userAgent.match(/Opera Mini/i);
     },
-    Windows: function(){
+    Windows: function () {
       return navigator.userAgent.match(/IEMobile/i);
     },
-    any: function(){
-      return(
+    any: function () {
+      return (
         isMobile.Android() ||
         isMobile.BlackBerry() ||
         isMobile.iOS() ||
         isMobile.Opera() ||
-        isMobile.Windows() );
+        isMobile.Windows());
     }
   };
-  
-  if (isMobile.any()){
+
+  if (isMobile.any()) {
+
     document.body.classList.add('_touch');
     console.log('is touch');
-  }else{
+    // let menuArrows = document.querySelectorAll('.menu-arrow');
+    // const subList = document.querySelector('.sub-list');
+    const selectedLang = document.querySelector('.selected-lang');
+    // if(menuArrows.length > 0) {
+    // for(let index = 0; index < menuArrows.length; index++){
+    // const menuArrow = menuArrows[index];
+    // menuArrow.addEventListener('click', e => {
+    // subList.classList.toggle('_active');
+    // })
+    // }
+    // };
+
+    if (selectedLang) {
+      selectedLang.addEventListener('click', e => {
+        selectedLang.classList.toggle('_active');
+      })
+    }
+
+  } else {
     document.body.classList.add('_pc');
     console.log('is pc');
+  }
+
+  //scroll when press menu items
+
+  const menuLinks = document.querySelectorAll('.header-menu-link[data-goto]');
+  //data-goto- goto is created up to u, can use any name; data- is attribute, u can create yourself;
+  if (menuLinks.length > 0) {
+    menuLinks.forEach(menuLink => {
+      menuLink.addEventListener('click', e => {
+        const menuLink = e.target;
+        if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
+          //dataset - is set of all attributes that belongs to some element(here: goto attribute)
+          //menuLink.dataset.goto - check if data attribute is fullfiled (zapolnen)
+          //document.querySelector(menuLink.dataset.goto) - check if the element which is linked to, exists(check if element na kotoryi ssilayutsia, est' v documente)
+          const gotoBlock = document.querySelector(menuLink.dataset.goto);
+          //gotoBlock- is elem that is being linked to;
+          const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('header').offsetHeight;
+          // getBoundingClientRect().top-space in px from top of the window to the top of the rect.
+          window.scrollTo({
+            top: gotoBlockValue,
+            behavior: "smooth"
+          });
+          e.preventDefault();
+        }
+      })
+    })
   }
 
 })

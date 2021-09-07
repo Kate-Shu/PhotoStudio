@@ -73,6 +73,7 @@ a {
   display: flex;
   justify-content: center;
   padding: 0;
+  margin: 0;
   height: 100%;
 
 }
@@ -80,16 +81,15 @@ a {
 .header-menu-item {
   display: flex;
   margin-right: 20px;
-  width: 100%;
-  height: 100%;
-
+  align-items: center;
+  /* width: 100%; */
+  /* height: 100%; */
 }
 
-.header-menu-item:hover {
+body._pc .header-menu-item:hover {
   color: #fbfbfd;
   opacity: 1;
   text-decoration: underline;
-
 }
 
 .header-logo-home {
@@ -124,18 +124,33 @@ a {
   color: #ffffff;
 }
 
-.languageswitcher:after {
-  font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands';
-  content: "\f0d7";
-  font-weight: 900;
-  font-size: 15px;
-  margin-left: 5px;
-  margin-bottom: -8px;
+/* .languageswitcher:after { */
+  /* font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands'; */
+  /* content: "\f0d7"; */
+  /* font-weight: 900; */
+  /* font-size: 15px; */
+  /* margin-left: 5px; */
+  /* margin-bottom: -8px; */
+/* } */
+
+.menu-arrow{
+  display: block;
+  width: 0;
+  height: 0;
+  margin: 3px 0px 0px 5px;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 8px solid #fbfbfb;
+  transition: transform .3s ease 0s;
+  -webkit-transition: transform .3s ease 0s;
+  -moz-transition: transform .3s ease 0s;
+  -ms-transition: transform .3s ease 0s;
+  -o-transition: transform .3s ease 0s;
 }
 
-.selected-lang ul {
+body._pc .sub-list  {
   width: 180px;
-  margin-top: 35px;
+  margin-top: 230px;
   margin-left: -44px;
   padding: 5px 0;
   background: #fbfbfb;
@@ -143,35 +158,76 @@ a {
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
   position: absolute;
-  /* opacity: 0; */
-  /* visibility: hidden; */
-  /* transition: all 0.3s ease 0s; */
-  /* -webkit-transition: all 0.3s ease 0s; */
-  /* -moz-transition: all 0.3s ease 0s; */
-  /* -ms-transition: all 0.3s ease 0s; */
-  /* -o-transition: all 0.3s ease 0s; */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
 }
 
-.selected-lang ul li {
+body._touch .sub-list {
+  width: 180px;
+  margin-top: 230px;
+  margin-left: -44px;
+  padding: 5px 0;
+  /* background: #fbfbfb; */
+  background: red;
+  border: solid 1px #f8f8f8;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+}
+
+.sub-list li {
   display: flex;
   justify-content: start;
 }
 
-.selected-lang:hover ul {
+body._pc .selected-lang:hover .sub-list {
   visibility: visible;
   opacity: 1;
 }
 
-.selected-lang ul li a {
+body._pc .selected-lang:hover .menu-arrow {
+  transform: rotate(180deg);
+-webkit-transform: rotate(180deg);
+-moz-transform: rotate(180deg);
+-ms-transform: rotate(180deg);
+-o-transform: rotate(180deg);
+}
+
+body._touch .selected-lang._active .sub-list {
+  visibility: visible;
+  opacity: 1;
+
+}
+
+body._touch .selected-lang._active .menu-arrow {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+
+.sub-list li a {
   width: 100%;
   display: block;
   padding: 5px 10px;
-  /* text-decoration: none; */
   color: #3a3a3a;
 }
 
 
-.selected-lang ul li a:hover {
+.sub-list li a:hover {
   background: #3a3a3a;
   color: #fbfbfb;
 }
@@ -263,14 +319,14 @@ a {
 
 @media (min-width: 414px) {
 
-  .selected-lang ul {
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease 0s;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -ms-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
-    pointer-events: none;
-  }
+  /* .selected-lang ul { */
+    /* opacity: 0; */
+    /* visibility: hidden; */
+    /* transition: all 0.3s ease 0s; */
+    /* -webkit-transition: all 0.3s ease 0s; */
+    /* -moz-transition: all 0.3s ease 0s; */
+    /* -ms-transition: all 0.3s ease 0s; */
+    /* -o-transition: all 0.3s ease 0s; */
+    /* pointer-events: none; */
+  /* } */
 }

@@ -81,6 +81,7 @@ class Footer extends HTMLElement{
           </div>
       </div>
   </div>
+  <div class="top-btn"> <a data-goto=".main-logo-container" class="go-top-link" href="#">Go to Top</a> </div>
 </footer>
 
 

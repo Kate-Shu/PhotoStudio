@@ -9,28 +9,29 @@ class Header extends HTMLElement {
     }
     connectedCallback() {
         this.innerHTML = `
-  <header class="header-container fixed-top">
+  <header class="header header-container fixed-top">
   <div class="header-wrapper">
       <div class="header-logo-home link">
           <a class="logo-home header-home-link" href="index.html">KateShu&nbsp;Studio</a>
       </div>
       <nav class="header-nav menu">
           <ul class="header-menu menu__list">
-              <li class="header-menu-item li-size menu__item">
+              <li class="header-menu-item menu__item">
                   <a class="header-menu-link" href="photo_section.html">Photo</a>
               </li>
-              <li class="header-menu-item li-size menu__item">
-                  <a class="header-menu-link" href="#">Video</a>
+              <li class="header-menu-item menu__item">
+                  <a data-goto=".video-container" href="#" class="header-menu-link">Video</a>
               </li>
-              <li class="header-menu-item li-size menu__item">
+              <li class="header-menu-item menu__item">
                   <a class="header-menu-link" href="form.html">Apply</a>
               </li>
-              <li class="header-menu-item li-size menu__item">
-                  <a class="header-menu-link" href="#footer-container">Contact&nbsp;us</a>
+              <li class="header-menu-item menu__item">
+                  <a  data-goto=".footer-container" href="#" class="header-menu-link">Contact&nbsp;us</a>
               </li>
-              <li class="header-menu-item  li-size menu__item selected-lang">
+              <li class="header-menu-item menu__item selected-lang">
                   <a class="header-menu-link languageswitcher" href="#">Languages</a>
-                  <ul>
+                  <span class="menu-arrow"></span>
+                  <ul class="sub-list">
                       <li> <a class="en" href="#">English</a> </li>
                       <li> <a class="ru" href="#">Russian</a> </li>
                       <li> <a class="de" href="#">German</a> </li>

@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  amenu('.menu','.menu__list','.menu__item','.menu__burger');
-  // amenu('.header-nav', '.header-menu', '.header-menu-item', '.header-menu-link', '.menu-burger');
-
+  amenu('.menu', '.menu__list', '.menu__item', '.menu__burger');
 
 
 
@@ -87,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   //change body background color
-const wrapperGallery = document.querySelector('.wrapper-gallery');
+  const wrapperGallery = document.querySelector('.wrapper-gallery');
   if (document.querySelector('.main-logo-container')) {
     let body = document.querySelector(".body");
     if (body) {
@@ -101,17 +99,80 @@ const wrapperGallery = document.querySelector('.wrapper-gallery');
   }
 
   //set link to photo_section
-const photoColumns = document.querySelectorAll('.photoColumn');
-photoColumns.forEach(photoColumn => {
-  photoColumn.setAttribute('onclick', 'location.href = "photo_section.html"');
+  const photoColumns = document.querySelectorAll('.photoColumn');
+  photoColumns.forEach(photoColumn => {
+    photoColumn.setAttribute('onclick', 'location.href = "photo_section.html"');
+  });
+
+  //go-to-top button
+  const gotopBtn = document.querySelector('.go-top-link[data-goto]');
+
+  if(gotopBtn){
+  gotopBtn.addEventListener('click', e => {
+    const gotopBtn = e.target;
+    if (gotopBtn.dataset.goto && document.querySelector(gotopBtn.dataset.goto)) {
+      const gotoBlock = document.querySelector(gotopBtn.dataset.goto);
+      const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('.main-logo-container').offsetHeight;
+
+      window.scrollTo({
+        top: gotoBlockValue,
+        behavior: "smooth"
+      });
+      e.preventDefault();
+    }
+  });
+
+  const refreshBtnVisibility = () => {
+      if(document.documentElement.scrollTop <= 550){
+        document.querySelector(".top-btn").style.opacity = '0';
+        document.querySelector(".top-btn").style.visibility = 'hidden';
+      }else{
+        document.querySelector(".top-btn").style.opacity = '.5';
+        document.querySelector(".top-btn").style.visibility = 'visible';
+      }
+  };
+  refreshBtnVisibility();
+
+  document.addEventListener("scroll", e => {
+    refreshBtnVisibility();
+  });
+  }
+
 });
 
-//burger menu
+//touch events
+const isMobile = {
+  Android: function () {
+    return navigator.userAgent.match(/Android/i);
+  },
+  BlackBerry: function () {
+    return navigator.userAgent.match(/BlackBerry/i);
+  },
+  iOS: function () {
+    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+  },
+  Opera: function () {
+    return navigator.userAgent.match(/Opera Mini/i);
+  },
+  Windows: function () {
+    return navigator.userAgent.match(/IEMobile/i);
+  },
+  any: function () {
+    return (
+      isMobile.Android() ||
+      isMobile.BlackBerry() ||
+      isMobile.iOS() ||
+      isMobile.Opera() ||
+      isMobile.Windows());
+  }
+};
+
+if (isMobile.any()) {
+  document.body.classList.add('_touch');
+console.log('is touch');
 
 
-
-});
-
-
-
-// document.addEventListener('DOMContentLoaded', init);
+} else {
+  document.body.classList.add('_pc');
+  console.log('is pc');
+}
