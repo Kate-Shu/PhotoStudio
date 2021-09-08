@@ -78,3 +78,4 @@ const validData = {
 const init = () => {
   validData.getFeedback(inputName, inputPhone, form, btnGoHomepage);
 };
+document.addEventListener('DOMContentLoaded', init)

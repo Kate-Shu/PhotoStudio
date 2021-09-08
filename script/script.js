@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".top-btn").style.opacity = '0';
         document.querySelector(".top-btn").style.visibility = 'hidden';
       }else{
-        document.querySelector(".top-btn").style.opacity = '.5';
+        document.querySelector(".top-btn").style.opacity = '.8';
         document.querySelector(".top-btn").style.visibility = 'visible';
       }
   };
