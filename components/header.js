@@ -2,7 +2,7 @@ class Header extends HTMLElement {
     constructor() {
         super();
         let link = document.createElement('link');
-        link.href = 'components/header.css';
+        link.href = 'libraries/adaptive-menu.css';
         link.rel = 'stylesheet';
         link.type = 'text/css';
         document.body.appendChild(link);
@@ -32,10 +32,18 @@ class Header extends HTMLElement {
                   <a class="header-menu-link languageswitcher" href="#">Languages</a>
                   <span class="menu-arrow"></span>
                   <ul class="sub-list">
-                      <li> <a class="en" href="#">English</a> </li>
-                      <li> <a class="ru" href="#">Russian</a> </li>
-                      <li> <a class="de" href="#">German</a> </li>
-                      <li> <a class="ae" href="#">Arabic</a> </li>
+                      <li> 
+                         <a class="en" href="#">English</a> 
+                      </li>
+                      <li> 
+                        <a class="ru" href="#">Russian</a> 
+                      </li>
+                      <li> 
+                        <a class="de" href="#">German</a> 
+                      </li>
+                      <li> 
+                        <a class="ae" href="#">Arabic</a> 
+                      </li>
                   </ul>
               </li>
           </ul>

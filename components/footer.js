@@ -1,14 +1,14 @@
-class Footer extends HTMLElement{
- constructor(){
-  super();
-  let link = document.createElement('link');
-  link.href = 'components/footer.css';
-  link.rel = 'stylesheet';
-  link.type = 'text/css';
-  document.body.appendChild(link);
- }
- connectedCallback(){
-  this.innerHTML = `
+class Footer extends HTMLElement {
+    constructor() {
+        super();
+        let link = document.createElement('link');
+        link.href = 'components/footer.css';
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        document.body.appendChild(link);
+    }
+    connectedCallback() {
+        this.innerHTML = `
   <footer class="footer-container" id="footer-container">
   <div class="footer-contacts-wrapper grid-section">
       <div class="footer-media">
@@ -77,7 +77,7 @@ class Footer extends HTMLElement{
   <div class="footer-block-copyright">
       <div class="footer-copyright-wrapper">
           <div class="footer-copyright-content footer-text">
-              Copyright © 2021 IgorVideo Studio. All rights reserved.
+              Copyright © 2022 KateShu Studio. All rights reserved.
           </div>
       </div>
   </div>
@@ -86,7 +86,7 @@ class Footer extends HTMLElement{
 
 
   `;
- }
+    }
 }
 
 customElements.define('footer-component', Footer);

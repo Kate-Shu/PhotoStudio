@@ -107,35 +107,35 @@ document.addEventListener("DOMContentLoaded", () => {
   //go-to-top button
   const gotopBtn = document.querySelector('.go-top-link[data-goto]');
 
-  if(gotopBtn){
-  gotopBtn.addEventListener('click', e => {
-    const gotopBtn = e.target;
-    if (gotopBtn.dataset.goto && document.querySelector(gotopBtn.dataset.goto)) {
-      const gotoBlock = document.querySelector(gotopBtn.dataset.goto);
-      const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('.main-logo-container').offsetHeight;
+  if (gotopBtn) {
+    gotopBtn.addEventListener('click', e => {
+      const gotopBtn = e.target;
+      if (gotopBtn.dataset.goto && document.querySelector(gotopBtn.dataset.goto)) {
+        const gotoBlock = document.querySelector(gotopBtn.dataset.goto);
+        const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('.main-logo-container').offsetHeight;
 
-      window.scrollTo({
-        top: gotoBlockValue,
-        behavior: "smooth"
-      });
-      e.preventDefault();
-    }
-  });
+        window.scrollTo({
+          top: gotoBlockValue,
+          behavior: "smooth"
+        });
+        e.preventDefault();
+      }
+    });
 
-  const refreshBtnVisibility = () => {
-      if(document.documentElement.scrollTop <= 550){
+    const refreshBtnVisibility = () => {
+      if (document.documentElement.scrollTop <= 550) {
         document.querySelector(".top-btn").style.opacity = '0';
         document.querySelector(".top-btn").style.visibility = 'hidden';
-      }else{
+      } else {
         document.querySelector(".top-btn").style.opacity = '.8';
         document.querySelector(".top-btn").style.visibility = 'visible';
       }
-  };
-  refreshBtnVisibility();
-
-  document.addEventListener("scroll", e => {
+    };
     refreshBtnVisibility();
-  });
+
+    document.addEventListener("scroll", e => {
+      refreshBtnVisibility();
+    });
   }
 
 });
@@ -169,7 +169,7 @@ const isMobile = {
 
 if (isMobile.any()) {
   document.body.classList.add('_touch');
-console.log('is touch');
+  console.log('is touch');
 
 
 } else {

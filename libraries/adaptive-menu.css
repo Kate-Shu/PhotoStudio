@@ -104,36 +104,28 @@ body._pc .header-menu-item:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: black;
-  font-size: 18px;
+  color: #ee404f;
+  font-size: 20px;
   font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  /* text-decoration: none; */
+  /*text-decoration: none;
+  */
   letter-spacing: -.01em;
   line-height: 3, 14;
   font-weight: 400;
   opacity: .8;
-  transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
   outline-offset: -7px;
-  -webkit-transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-  -moz-transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-  -ms-transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-  -o-transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  -moz-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  -ms-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  -o-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .header-home-link:hover {
-  color: #ffffff;
+  color: #f27ea5;
 }
 
-/* .languageswitcher:after { */
-  /* font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands'; */
-  /* content: "\f0d7"; */
-  /* font-weight: 900; */
-  /* font-size: 15px; */
-  /* margin-left: 5px; */
-  /* margin-bottom: -8px; */
-/* } */
-
-.menu-arrow{
+.menu-arrow {
   display: block;
   width: 0;
   height: 0;
@@ -148,11 +140,11 @@ body._pc .header-menu-item:hover {
   -o-transition: transform .3s ease 0s;
 }
 
-body._pc .sub-list  {
-  width: 180px;
-  margin-top: 230px;
-  margin-left: -44px;
-  padding: 5px 0;
+body._pc .sub-list {
+  width: 178px;
+  margin-top: 228px;
+  margin-left: -40px;
+  padding: 5px 0px 5px 5px;
   background: #fbfbfb;
   border: solid 1px #f8f8f8;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
@@ -169,11 +161,10 @@ body._pc .sub-list  {
 
 body._touch .sub-list {
   width: 180px;
-  margin-top: 230px;
-  margin-left: -44px;
-  padding: 5px 0;
-  /* background: #fbfbfb; */
-  background: red;
+  margin-top: 228px;
+  margin-left: -40px;
+  padding: 5px 0px 5px 5px;
+  background: #fbfbfb;
   border: solid 1px #f8f8f8;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
@@ -199,10 +190,10 @@ body._pc .selected-lang:hover .sub-list {
 
 body._pc .selected-lang:hover .menu-arrow {
   transform: rotate(180deg);
--webkit-transform: rotate(180deg);
--moz-transform: rotate(180deg);
--ms-transform: rotate(180deg);
--o-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
 }
 
 body._touch .selected-lang._active .sub-list {
@@ -232,7 +223,7 @@ body._touch .selected-lang._active .menu-arrow {
   color: #fbfbfb;
 }
 
-.selected-lang ul li a:before {
+body._pc .selected-lang ul li a:before {
   content: '';
   display: inline-block;
   vertical-align: middle;
@@ -240,31 +231,32 @@ body._touch .selected-lang._active .menu-arrow {
   height: 32px;
   margin-right: 10px;
   margin-left: 15%;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .en:before {
-  background-image: url("https://www.countryflags.io/us/flat/32.png");
+  background-image: url('/png-lang/uk.png');
 }
 
 .ru:before {
-  background-image: url("https://www.countryflags.io/ru/flat/32.png");
+  background-image: url("/png-lang/ru.png");
 }
 
 .de:before {
-  background-image: url("https://www.countryflags.io/de/flat/32.png");
+  background-image: url("/png-lang/de.png");
 }
 
 .ae:before {
-  background-image: url("https://www.countryflags.io/ae/flat/32.png");
+  background-image: url("/png-lang/uae.png");
 }
+
 
 .header-menu-link {
   color: #fbfbfb;
 }
 
-
-
-
+/* amenu burger */
 .amenu__item {
   word-wrap: normal;
 }
@@ -275,6 +267,13 @@ body._touch .selected-lang._active .menu-arrow {
 
 .amenu__burger-open .amenu__burger-list {
   display: block;
+}
+
+.amenu__burger-list_closed {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .amenu__burger-btn {
@@ -302,31 +301,23 @@ body._touch .selected-lang._active .menu-arrow {
   display: block;
 }
 
-
 .amenu__burger-btn:hover {
   background-image: url("data:image/svg+xml,%3Csvg id='Capa_1' enable-background='new 0 0 515.555 515.555' height='512' viewBox='0 0 515.555 515.555' width='512' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m303.347 18.875c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0'/%3E%3Cpath d='m303.347 212.209c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0'/%3E%3Cpath d='m303.347 405.541c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0'/%3E%3C/svg%3E");
 }
 
 .amenu__burger-list {
   position: absolute;
-  right: 0;
+  width: 180px;
+  right: 10px;
+  top: 35px;
   background-color: #3a3a3a;
   border: 1px solid black;
-  /* list-style: none; */
   display: none;
-  padding: 30px;
+  padding-top: 10px;
 }
 
-@media (min-width: 414px) {
-
-  /* .selected-lang ul { */
-    /* opacity: 0; */
-    /* visibility: hidden; */
-    /* transition: all 0.3s ease 0s; */
-    /* -webkit-transition: all 0.3s ease 0s; */
-    /* -moz-transition: all 0.3s ease 0s; */
-    /* -ms-transition: all 0.3s ease 0s; */
-    /* -o-transition: all 0.3s ease 0s; */
-    /* pointer-events: none; */
-  /* } */
+.amenu__burger-list .amenu__item {
+  padding: 0 0 13px 0;
 }
+
+@media (min-width: 414px) {}

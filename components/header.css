@@ -165,7 +165,7 @@ opacity: 1;
 }
 
 .en:before {
- background-image: url("https://www.countryflags.io/us/flat/32.png");
+ background-image: url(/png_lang/germany.png);
 }
 
 .ru:before {

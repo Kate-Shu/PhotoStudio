@@ -29,6 +29,8 @@ body {
 
 .main-logo-content {
     margin: 0;
+    color: #3a3a3a;
+    opacity: 80%;
 }
 
 .content {
@@ -36,7 +38,7 @@ body {
 }
 
 .img-container {
-    background-image: url(/img-gallery/Main_img.jpg);
+    background-image: url(/img-gallery/M2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -52,35 +54,36 @@ body {
 }
 
 .linkApplyComponent {
-    width: 90px;
+    /* width: 90px; */
     position: absolute;
     right: 10vw;
     top: 25vh;
-    text-align: center;
+    /* text-align: center; */
     padding: 5px;
     font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    font-size: 20px;
+    font-size: 25px;
     font-style: normal;
     text-transform: uppercase;
     text-decoration: none;
-    color: #f8f8f8;
-    letter-spacing: .2em;
+    color: #ee404f;
+    letter-spacing: .1em;
     font-weight: 700;
     line-height: 20px;
     cursor: pointer;
     z-index: 1;
+    border: 1px solid #ee404f;
 }
 
 .linkApplyComponent::before {
     content: "";
     position: absolute;
     /* background: #3a3a3a; */
-    background-image: linear-gradient(180deg, #3a3a3a, #f3f3f3);
-    width: 120%;
-    height: 50%;
+    background-image: linear-gradient(180deg, #f9aec2, #f3f3f3);
+    width: 100%;
+    height: 0%;
     z-index: -1;
     bottom: 0;
-    left: -10%;
+    left: 0%;
     transition: all .2s linear;
     -webkit-transition: all .2s linear;
     -moz-transition: all .2s linear;
@@ -90,6 +93,10 @@ body {
 
 .linkApplyComponent:hover:before {
     height: 100%;
+}
+
+.linkApplyComponent:hover {
+    color: red;
 }
 
 /* text appearing */
@@ -116,7 +123,7 @@ body {
 }
 
 .row-text {
-    color: #d0793e;
+    color: whitesmoke;
     display: flex;
     flex-direction: column;
     max-width: 40%;
@@ -166,7 +173,23 @@ body {
     -moz-transform: skew(0deg, -3deg);
     -ms-transform: skew(0deg, -3deg);
     -o-transform: skew(0deg, -3deg);
+    padding: 40px 0px 50px 0;
 
+}
+
+.video-title {
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 35px;
+    font-style: normal;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #ee404f;
+    letter-spacing: .1em;
+    font-weight: 700;
+    line-height: 20px;
+    transform: skew(0deg, 3deg);
+    text-align: center;
+    margin: 10px 0px 45px 0px
 }
 
 .video-wrapper {
@@ -175,12 +198,13 @@ body {
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 3% 0;
+    /* align-items: center; */
+    /* padding: 3% 0; */
     -webkit-transform: skew(0deg, 3deg);
     -moz-transform: skew(0deg, 3deg);
     -ms-transform: skew(0deg, 3deg);
     -o-transform: skew(0deg, 3deg);
+    padding-bottom: 20px;
 }
 
 .video-items {
@@ -236,11 +260,20 @@ body {
 }
 
 /* photo container */
+/* .photo-container { */
+/* background: #000000; */
+/* padding: 13% 0 0 0; */
+/* margin-top: -50px; */
+/* width: 100%; */
+/* } */
+
 .photo-container {
     background: #000000;
     padding: 13% 0 0 0;
     margin-top: -50px;
     width: 100%;
+    /* height: 1000px; */
+
 }
 
 .photo-items {
@@ -378,8 +411,8 @@ body {
     display: block;
     width: 20px;
     height: 20px;
-    border-bottom: 3px solid #d0793e;
-    border-right: 3px solid #d0793e;
+    border-bottom: 3px solid #ee404f;
+    border-right: 3px solid #ee404f;
     transform: rotate(45deg);
     margin: -12px;
     animation: scroll 2s infinite;
@@ -447,6 +480,12 @@ body {
     }
 }
 
+@media(max-width: 1100px) {
+    .column {
+        flex: 20%;
+    }
+}
+
 @media(max-width: 998px) {
     .img-container {
         height: 900px;
@@ -485,10 +524,18 @@ body {
     .img-container {
         height: 700px;
     }
+
+    .photo-container {
+        margin-top: -20px;
+    }
 }
 
 @media(max-width: 414px) {
     .img-container {
         height: 560px;
+    }
+
+    .photo-container {
+        margin-top: -10px;
     }
 }

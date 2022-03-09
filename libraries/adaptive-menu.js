@@ -70,6 +70,8 @@
       burgerBtn.classList.add('amenu__burger-btn_active')
     } else {
       burgerBtn.classList.remove('amenu__burger-btn_active')
+      // burgerList.classList.remove('amenu__burger-list')
+      // burgerList.classList.add('amenu__burger-list_closed')
     }
   }
 
@@ -163,6 +165,10 @@
         }
       })
     })
+  }
+
+  if (wrapperGallery) {
+
   }
 
 })
