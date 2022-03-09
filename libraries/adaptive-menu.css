@@ -236,19 +236,19 @@ body._pc .selected-lang ul li a:before {
 }
 
 .en:before {
-  background-image: url(/png-lang/uk.png);
+  background-image: url(/png-lang/uk.PNG);
 }
 
 .ru:before {
-  background-image: url(/png-lang/ru.png);
+  background-image: url(/png-lang/ru.PNG);
 }
 
 .de:before {
-  background-image: url(/png-lang/de.png);
+  background-image: url(/png-lang/de.PNG);
 }
 
 .ae:before {
-  background-image: url(/png-lang/uae.png);
+  background-image: url(/png-lang/uae.PNG);
 }
 
 
