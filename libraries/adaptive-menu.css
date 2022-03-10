@@ -223,7 +223,8 @@ body._touch .selected-lang._active .menu-arrow {
   color: #fbfbfb;
 }
 
-body._pc .selected-lang ul li a:before {
+body._pc .selected-lang ul li a:before,
+body._touch .selected-lang ul li a:before {
   content: '';
   display: inline-block;
   vertical-align: middle;
@@ -236,21 +237,36 @@ body._pc .selected-lang ul li a:before {
 }
 
 .en:before {
-  background-image: url(/png-lang/uk.PNG);
+  background-image: url(../png-lang/uk.png);
 }
 
 .ru:before {
-  background-image: url(/png-lang/ru.PNG);
+  background-image: url(../png-lang/ru.png);
 }
 
 .de:before {
-  background-image: url(/png-lang/de.PNG);
+  background-image: url(../png-lang/de.png);
 }
 
 .ae:before {
-  background-image: url(/png-lang/uae.PNG);
+  background-image: url(../png-lang/uae.png);
 }
 
+body._touch .en:before {
+  background-image: url(../png-lang/uk.png);
+}
+
+body._touch .ru:before {
+  background-image: url(../png-lang/ru.png);
+}
+
+body._touch .de:before {
+  background-image: url(../png-lang/de.png);
+}
+
+body._touch .ae:before {
+  background-image: url(../png-lang/uae.png);
+}
 
 .header-menu-link {
   color: #fbfbfb;
