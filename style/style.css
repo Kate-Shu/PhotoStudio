@@ -499,7 +499,9 @@ body {
     .img-container {
         background-image: url(https://i.ibb.co/8z095xZ/main-img.jpg);
         height: 1100px;
-        background-position-x: 87%;
+        background-position-x: 80%;
+        /* background-size: cover; */
+        background-size: auto 100vh;
     }
 
     .body._pc .img-container {
@@ -512,6 +514,7 @@ body {
         background-image: url(https://i.ibb.co/8z095xZ/main-img.jpg);
         height: 1000px;
         background-position-x: 80%;
+        background-size: auto 100vh;
     }
 
     .body._pc .img-container {
@@ -581,6 +584,7 @@ body {
         background-image: url(https://i.ibb.co/8z095xZ/main-img.jpg);
         height: 1150px;
         background-position-x: 80%;
+        background-size: auto 100vh;
     }
 
     .body._pc .img-container {
@@ -653,6 +657,8 @@ body {
         background-image: url(https://i.ibb.co/8z095xZ/main-img.jpg);
         height: 850px;
         background-position-x: 70%;
+        background-size: auto 100vh;
+
     }
 
     .body._pc .img-container {
@@ -677,6 +683,7 @@ body {
         background-image: url(https://i.ibb.co/8z095xZ/main-img.jpg);
         height: 800px;
         background-position-x: 70%;
+        background-size: auto 100vh;
     }
 
     .body._pc .img-container {
@@ -701,6 +708,7 @@ body {
         background-image: url(https://i.ibb.co/8z095xZ/main-img.jpg);
         height: 600px;
         background-position-x: 70%;
+        background-size: auto 100vh;
     }
 
     .body._pc .img-container {
