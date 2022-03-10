@@ -42,7 +42,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-position-x: center;
+    background-position: center;
     display: flex;
     align-items: center;
     width: 100%;
@@ -499,6 +499,14 @@ body {
     .img-container {
         height: 1100px;
         background-position-x: 80%;
+        background-size: cover !important;
+        background-attachment: fixed;
+    }
+
+    .body._touch .img-container {
+        background-position-x: 70%;
+        background-size: cover !important;
+        background-attachment: fixed;
     }
 
     .body._pc .img-container {
@@ -510,6 +518,14 @@ body {
     .img-container {
         height: 1000px;
         background-position-x: 80%;
+        background-size: cover !important;
+        background-attachment: fixed;
+    }
+
+    .body._touch .img-container {
+        background-position-x: 70%;
+        background-size: cover !important;
+        background-attachment: fixed;
     }
 
     .body._pc .img-container {
@@ -578,6 +594,14 @@ body {
     .img-container {
         height: 1150px;
         background-position-x: 80%;
+        background-size: cover !important;
+        background-attachment: fixed;
+    }
+
+    .body._touch .img-container {
+        background-position-x: 70%;
+        background-size: cover !important;
+        background-attachment: fixed;
     }
 
     .body._pc .img-container {
@@ -649,6 +673,14 @@ body {
     .img-container {
         height: 850px;
         background-position-x: 70%;
+        background-size: cover !important;
+        background-attachment: fixed;
+    }
+
+    .body._touch .img-container {
+        background-position-x: 70%;
+        background-size: cover !important;
+        background-attachment: fixed;
     }
 
     .body._pc .img-container {
@@ -672,6 +704,14 @@ body {
     .img-container {
         height: 800px;
         background-position-x: 70%;
+        background-size: cover !important;
+        background-attachment: fixed;
+    }
+
+    .body._touch .img-container {
+        background-position-x: 70%;
+        background-size: cover !important;
+        background-attachment: fixed;
     }
 
     .body._pc .img-container {
@@ -695,6 +735,15 @@ body {
     .img-container {
         height: 600px;
         background-position-x: 70%;
+        background-size: cover !important;
+        background-attachment: fixed;
+
+    }
+
+    .body._touch .img-container {
+        background-position-x: 70%;
+        background-size: cover !important;
+        background-attachment: fixed;
     }
 
     .body._pc .img-container {

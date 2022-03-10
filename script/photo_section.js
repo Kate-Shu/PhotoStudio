@@ -65,8 +65,8 @@ if (galleryImages) {
       newImg.setAttribute('src', 'img-gallery/' + setNewImgUrl);
       newImg.setAttribute('id', 'current-img');
 
-     // https://www.youtube.com/watch?v=YxMtL6lJbZw
-     //https://www.youtube.com/watch?v=5bxFSOA5JYo&t=1580s
+      // https://www.youtube.com/watch?v=YxMtL6lJbZw
+      //https://www.youtube.com/watch?v=5bxFSOA5JYo&t=1580s
 
       if (newImgWindow) {
         //disable context menu while slider is open
@@ -86,7 +86,7 @@ if (galleryImages) {
         newImgWindow.addEventListener('touchstart', touchStart(index));
         newImgWindow.addEventListener('touchend', touchEnd);
         newImgWindow.addEventListener('touchmove', touchMove);
-        
+
         function touchStart(index) {
           return function (event) {
             currentIndex = index;
@@ -103,10 +103,10 @@ if (galleryImages) {
             console.log(currentPos);
             const currentTranslate = currentPos - startPos;
             console.log(currentTranslate);
-          
-            if(currentTranslate > 0){
+
+            if (currentTranslate > 0) {
               changeImg(1);
-            }else{
+            } else {
               changeImg(0);
             }
           }
@@ -116,7 +116,7 @@ if (galleryImages) {
           isDragging = false;
         };
 
-        function getPositionX(event){
+        function getPositionX(event) {
           return event.touches[0].clientX;
         }
       }
@@ -126,21 +126,37 @@ if (galleryImages) {
         // let imgWidth = this.width;
         // let calcImgToEdge = ((windowWidth - imgWidth) / 2) - 80;
 
-        let newNextBtn = document.createElement('a');
-        let btnNextText = document.createTextNode('Next');
-        newNextBtn.appendChild(btnNextText);
-        container.appendChild(newNextBtn);
-        newNextBtn.setAttribute('class', 'img-btn-next');
-        newNextBtn.setAttribute('onclick', 'changeImg(1)');
-        newNextBtn.style.cssText = "right: " + 10 + "px;"; // "right: " + calcImgToEdge + "px;"
-
-        let newPrevBtn = document.createElement('a');
-        let btnPrevText = document.createTextNode('Prev');
-        newPrevBtn.appendChild(btnPrevText);
-        container.appendChild(newPrevBtn);
-        newPrevBtn.setAttribute('class', 'img-btn-prev');
-        newPrevBtn.setAttribute('onclick', 'changeImg(0)');
-        newPrevBtn.style.cssText = "left: " + 10 + "px;"; // "right: " + calcImgToEdge + "px;"
+        if (isMobile.any()) {
+          let newNextBtn = document.createElement('a');
+          let btnNextText = document.createTextNode('>');
+          newNextBtn.appendChild(btnNextText);
+          container.appendChild(newNextBtn);
+          newNextBtn.setAttribute('class', 'img-btn-next-mob');
+          newNextBtn.setAttribute('onclick', 'changeImg(1)');
+          newNextBtn.style.cssText = "right: " + 1 + "px;"; // "right: " + calcImgToEdge + "px;"
+          let newPrevBtn = document.createElement('a');
+          let btnPrevText = document.createTextNode('<');
+          newPrevBtn.appendChild(btnPrevText);
+          container.appendChild(newPrevBtn);
+          newPrevBtn.setAttribute('class', 'img-btn-prev-mob');
+          newPrevBtn.setAttribute('onclick', 'changeImg(0)');
+          newPrevBtn.style.cssText = "left: " + 1 + "px;"; // "right: " + calcImgToEdge + "px;"
+        } else {
+          let newNextBtn = document.createElement('a');
+          let btnNextText = document.createTextNode('Next');
+          newNextBtn.appendChild(btnNextText);
+          container.appendChild(newNextBtn);
+          newNextBtn.setAttribute('class', 'img-btn-next');
+          newNextBtn.setAttribute('onclick', 'changeImg(1)');
+          newNextBtn.style.cssText = "right: " + 10 + "px;"; // "right: " + calcImgToEdge + "px;"
+          let newPrevBtn = document.createElement('a');
+          let btnPrevText = document.createTextNode('Prev');
+          newPrevBtn.appendChild(btnPrevText);
+          container.appendChild(newPrevBtn);
+          newPrevBtn.setAttribute('class', 'img-btn-prev');
+          newPrevBtn.setAttribute('onclick', 'changeImg(0)');
+          newPrevBtn.style.cssText = "left: " + 10 + "px;"; // "right: " + calcImgToEdge + "px;"
+        }
       }
     })
   })
@@ -187,18 +203,27 @@ function changeImg(changeDir) {
 
   //set next-prev buttons after loading the image
   newImg.onload = function () {
-
-    //get width to the edge
-    let imgWidth = this.width;
-    // let calcImgToEdge = ((windowWidth - imgWidth) / 2) - 80;
-
-    //set class and style: right: 999px;
-    let nextBtn = document.querySelector('.img-btn-next');
-    nextBtn.style.cssText = "right: " + 10 + "px;";
-
-    //set class and style: left: 999px;
-    let prevBtn = document.querySelector('.img-btn-prev');
-    prevBtn.style.cssText = "left: " + 10 + "px;";
+    if (isMobile.any()) {
+      //get width to the edge
+      let imgWidth = this.width;
+      // let calcImgToEdge = ((windowWidth - imgWidth) / 2) - 80;
+      //set class and style: right: 999px;
+      let nextBtn = document.querySelector('.img-btn-next-mob');
+      nextBtn.style.cssText = "right: " + 1 + "px;";
+      //set class and style: left: 999px;
+      let prevBtn = document.querySelector('.img-btn-prev-mob');
+      prevBtn.style.cssText = "left: " + 1 + "px;";
+    } else {
+      //get width to the edge
+      let imgWidth = this.width;
+      // let calcImgToEdge = ((windowWidth - imgWidth) / 2) - 80;
+      //set class and style: right: 999px;
+      let nextBtn = document.querySelector('.img-btn-next');
+      nextBtn.style.cssText = "right: " + 10 + "px;";
+      //set class and style: left: 999px;
+      let prevBtn = document.querySelector('.img-btn-prev');
+      prevBtn.style.cssText = "left: " + 10 + "px;";
+    }
   }
 }
 
