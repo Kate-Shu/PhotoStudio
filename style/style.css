@@ -501,204 +501,205 @@ body {
         height: 1100px;
         background-position-x: 80%;
         /* background-size: cover; */
-        background-size: auto 100vh;
+        background-size: auto 1100px;
+    }
+}
+
+
+@media(max-width: 770px) {
+    .img-container {
+        background-image: url(https://i.ibb.co/8z095xZ/main-img.jpg);
+        height: 1000px;
+        background-position-x: 80%;
+        background-size: auto 1000px;
     }
 
-
-    @media(max-width: 770px) {
-        .img-container {
-            background-image: url(https://i.ibb.co/8z095xZ/main-img.jpg);
-            height: 1000px;
-            background-position-x: 80%;
-            background-size: auto 1000px;
-        }
-
-        .video-container {
-            height: 800px;
-        }
-
-        .column {
-            flex: 20%;
-        }
-
-        .photo-container {
-            margin-top: -70px;
-        }
-
-        .video-items {
-            grid-template-columns: repeat (2, 1fr);
-            grid-template-rows: repeat (3, 1fr);
-            grid-template-areas:
-                "video1 video2"
-                "video3 video4"
-                "video5 video6";
-        }
-
-        .photo-items {
-            margin: 0px;
-            padding: 0;
-        }
-
-        .column {
-            flex: 48%;
-            padding: 0;
-            max-width: 48%;
-        }
-
-        .column-first {
-            margin-right: 15px;
-        }
-
-        .column-second .photoColumn {
-            margin-bottom: 10px;
-        }
-
-        .column-fourth .photoColumn {
-            margin-bottom: 10px;
-        }
-
-        .column-second {
-            margin: 12px 0px 0px 0px;
-        }
-
-        .column-third {
-            margin-right: 15px;
-        }
-
-        .column-fourth {
-            margin-right: 0;
-        }
-
+    .video-container {
+        height: 800px;
     }
 
-    @media(max-width: 568px) {
-        .img-container {
-            background-image: url(https://i.ibb.co/8z095xZ/main-img.jpg);
-            height: 1150px;
-            background-position-x: 80%;
-            background-size: auto 1150%;
-        }
-
-        .photo-container {
-            margin-top: -20px;
-        }
-
-        .linkApplyComponent {
-            font-size: 20px;
-        }
-
-        .content-title {
-            font-size: 25px;
-        }
-
-        .video-container {
-            height: 1200px;
-        }
-
-        .video-items {
-            grid-template-columns: repeat (3, 1fr);
-            grid-template-rows: repeat (6, 1fr);
-            column-gap: 4%;
-            row-gap: 3%;
-            grid-template-areas:
-                "video1"
-                "video3"
-                "video5"
-                "video2"
-                "video4"
-                "video6";
-        }
-
-        .video-items {
-            height: 80%;
-            width: 75%;
-        }
-
-        .photo-items {
-            margin: 0px;
-            padding: 0;
-        }
-
-        .column {
-            flex: 95%;
-            padding: 0;
-            max-width: 95%;
-            margin: 0;
-        }
-
-        .column-second,
-        .column-fourth {
-            margin-right: 0;
-        }
-
-        .column-second .photoColumn {
-            margin-bottom: 0px;
-        }
-
-        .column-fourth .photoColumn {
-            margin-bottom: 0px;
-        }
+    .column {
+        flex: 20%;
     }
 
-    @media(max-width: 414px) {
-        .img-container {
-            background-image: url(https://i.ibb.co/8z095xZ/main-img.jpg);
-            height: 850px;
-            background-position-x: 70%;
-            background-size: auto 850px;
-        }
-
-        .photo-container {
-            margin-top: -10px;
-        }
-
-        .linkApplyComponent {
-            font-size: 20px;
-        }
-
-        .content-title {
-            font-size: 25px;
-        }
+    .photo-container {
+        margin-top: -70px;
     }
 
-    @media(max-width: 390px) {
-        .img-container {
-            background-image: url(https://i.ibb.co/8z095xZ/main-img.jpg);
-            height: 800px;
-            background-position-x: 70%;
-            background-size: auto 800px;
-        }
-
-        .photo-container {
-            margin-top: -10px;
-        }
-
-        .linkApplyComponent {
-            font-size: 20px;
-        }
-
-        .content-title {
-            font-size: 25px;
-        }
+    .video-items {
+        grid-template-columns: repeat (2, 1fr);
+        grid-template-rows: repeat (3, 1fr);
+        grid-template-areas:
+            "video1 video2"
+            "video3 video4"
+            "video5 video6";
     }
 
-    @media(max-width: 375px) {
-        .img-container {
-            background-image: url(https://i.ibb.co/8z095xZ/main-img.jpg);
-            height: 600px;
-            background-position-x: 70%;
-            background-size: auto 600px;
-        }
-
-        .photo-container {
-            margin-top: -10px;
-        }
-
-        .linkApplyComponent {
-            font-size: 20px;
-        }
-
-        .content-title {
-            font-size: 25px;
-        }
+    .photo-items {
+        margin: 0px;
+        padding: 0;
     }
+
+    .column {
+        flex: 48%;
+        padding: 0;
+        max-width: 48%;
+    }
+
+    .column-first {
+        margin-right: 15px;
+    }
+
+    .column-second .photoColumn {
+        margin-bottom: 10px;
+    }
+
+    .column-fourth .photoColumn {
+        margin-bottom: 10px;
+    }
+
+    .column-second {
+        margin: 12px 0px 0px 0px;
+    }
+
+    .column-third {
+        margin-right: 15px;
+    }
+
+    .column-fourth {
+        margin-right: 0;
+    }
+
+}
+
+@media(max-width: 568px) {
+    .img-container {
+        background-image: url(https://i.ibb.co/8z095xZ/main-img.jpg);
+        height: 1150px;
+        background-position-x: 80%;
+        background-size: auto 1150px;
+    }
+
+    .photo-container {
+        margin-top: -20px;
+    }
+
+    .linkApplyComponent {
+        font-size: 20px;
+    }
+
+    .content-title {
+        font-size: 25px;
+    }
+
+    .video-container {
+        height: 1200px;
+    }
+
+    .video-items {
+        grid-template-columns: repeat (3, 1fr);
+        grid-template-rows: repeat (6, 1fr);
+        column-gap: 4%;
+        row-gap: 3%;
+        grid-template-areas:
+            "video1"
+            "video3"
+            "video5"
+            "video2"
+            "video4"
+            "video6";
+    }
+
+    .video-items {
+        height: 80%;
+        width: 75%;
+    }
+
+    .photo-items {
+        margin: 0px;
+        padding: 0;
+    }
+
+    .column {
+        flex: 95%;
+        padding: 0;
+        max-width: 95%;
+        margin: 0;
+    }
+
+    .column-second,
+    .column-fourth {
+        margin-right: 0;
+    }
+
+    .column-second .photoColumn {
+        margin-bottom: 0px;
+    }
+
+    .column-fourth .photoColumn {
+        margin-bottom: 0px;
+    }
+}
+
+@media(max-width: 414px) {
+    .img-container {
+        background-image: url(https://i.ibb.co/8z095xZ/main-img.jpg);
+        height: 850px;
+        background-position-x: 70%;
+        background-size: auto 850px;
+    }
+
+    .photo-container {
+        margin-top: -10px;
+    }
+
+    .linkApplyComponent {
+        font-size: 20px;
+    }
+
+    .content-title {
+        font-size: 25px;
+    }
+}
+
+@media(max-width: 390px) {
+    .img-container {
+        background-image: url(https://i.ibb.co/8z095xZ/main-img.jpg);
+        height: 800px;
+        background-position-x: 70%;
+        background-size: auto 800px;
+    }
+
+    .photo-container {
+        margin-top: -10px;
+    }
+
+    .linkApplyComponent {
+        font-size: 20px;
+    }
+
+    .content-title {
+        font-size: 25px;
+    }
+}
+
+@media(max-width: 375px) {
+    .img-container {
+        background-image: url(https://i.ibb.co/8z095xZ/main-img.jpg);
+        height: 600px;
+        background-position-x: 70%;
+        background-size: auto 600px;
+    }
+
+    .photo-container {
+        margin-top: -10px;
+    }
+
+    .linkApplyComponent {
+        font-size: 20px;
+    }
+
+    .content-title {
+        font-size: 25px;
+    }
+}
