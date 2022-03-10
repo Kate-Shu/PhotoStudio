@@ -497,16 +497,9 @@ body {
 
 @media(max-width: 820px) {
     .img-container {
+        background-image: url(https://i.ibb.co/8z095xZ/main-img.jpg);
         height: 1100px;
-        background-position-x: 80%;
-        background-size: cover !important;
-        background-attachment: fixed;
-    }
-
-    .body._touch .img-container {
-        background-position-x: 70%;
-        background-size: cover !important;
-        background-attachment: fixed;
+        background-position-x: 87%;
     }
 
     .body._pc .img-container {
@@ -516,16 +509,9 @@ body {
 
 @media(max-width: 770px) {
     .img-container {
+        background-image: url(https://i.ibb.co/8z095xZ/main-img.jpg);
         height: 1000px;
         background-position-x: 80%;
-        background-size: cover !important;
-        background-attachment: fixed;
-    }
-
-    .body._touch .img-container {
-        background-position-x: 70%;
-        background-size: cover !important;
-        background-attachment: fixed;
     }
 
     .body._pc .img-container {
@@ -592,16 +578,9 @@ body {
 
 @media(max-width: 568px) {
     .img-container {
+        background-image: url(https://i.ibb.co/8z095xZ/main-img.jpg);
         height: 1150px;
         background-position-x: 80%;
-        background-size: cover !important;
-        background-attachment: fixed;
-    }
-
-    .body._touch .img-container {
-        background-position-x: 70%;
-        background-size: cover !important;
-        background-attachment: fixed;
     }
 
     .body._pc .img-container {
@@ -671,16 +650,9 @@ body {
 
 @media(max-width: 414px) {
     .img-container {
+        background-image: url(https://i.ibb.co/8z095xZ/main-img.jpg);
         height: 850px;
         background-position-x: 70%;
-        background-size: cover !important;
-        background-attachment: fixed;
-    }
-
-    .body._touch .img-container {
-        background-position-x: 70%;
-        background-size: cover !important;
-        background-attachment: fixed;
     }
 
     .body._pc .img-container {
@@ -702,16 +674,9 @@ body {
 
 @media(max-width: 390px) {
     .img-container {
+        background-image: url(https://i.ibb.co/8z095xZ/main-img.jpg);
         height: 800px;
         background-position-x: 70%;
-        background-size: cover !important;
-        background-attachment: fixed;
-    }
-
-    .body._touch .img-container {
-        background-position-x: 70%;
-        background-size: cover !important;
-        background-attachment: fixed;
     }
 
     .body._pc .img-container {
@@ -733,17 +698,9 @@ body {
 
 @media(max-width: 375px) {
     .img-container {
+        background-image: url(https://i.ibb.co/8z095xZ/main-img.jpg);
         height: 600px;
         background-position-x: 70%;
-        background-size: cover !important;
-        background-attachment: fixed;
-
-    }
-
-    .body._touch .img-container {
-        background-position-x: 70%;
-        background-size: cover !important;
-        background-attachment: fixed;
     }
 
     .body._pc .img-container {
