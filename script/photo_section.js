@@ -164,9 +164,15 @@ if (galleryImages) {
 
 function closeImg() {
   document.querySelector(".img-window").remove();
-  document.querySelector(".img-btn-next").remove();
-  document.querySelector(".img-btn-prev").remove();
   document.querySelector(".body").style.overflow = "auto";
+
+  if (isMobile.any()) {
+    document.querySelector(".img-btn-next-mob").remove();
+    document.querySelector(".img-btn-prev-mob").remove();
+  } else {
+    document.querySelector(".img-btn-next").remove();
+    document.querySelector(".img-btn-prev").remove();
+  }
 
   window.oncontextmenu = function () {
     return true;
