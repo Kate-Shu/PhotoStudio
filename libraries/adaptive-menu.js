@@ -141,7 +141,7 @@
     console.log('is pc');
   }
 
-  //scroll when press menu items
+  //scroll when click menu-items
 
   const menuLinks = document.querySelectorAll('.header-menu-link[data-goto]');
   //data-goto- goto is created up to u, can use any name; data- is attribute, u can create yourself;

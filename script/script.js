@@ -121,7 +121,6 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
       }
     });
-
     const refreshBtnVisibility = () => {
       if (document.documentElement.scrollTop <= 550) {
         document.querySelector(".top-btn").style.opacity = '0';
