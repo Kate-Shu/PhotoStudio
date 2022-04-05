@@ -162,6 +162,7 @@ body._pc .sub-list {
 body._touch .sub-list {
   width: 180px;
   margin-top: 228px;
+  -webkit-margin-top: 228px;
   margin-left: -40px;
   padding: 5px 0px 5px 5px;
   background: #fbfbfb;

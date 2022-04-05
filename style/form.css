@@ -6,7 +6,8 @@ body {
     padding-top: 50px;
     height: 100%;
     min-height: 100vh;
-    overflow: auto;
+    /* max-height: 100vh; */
+    overflow: hidden;
     background-size: cover;
     background-color: black;
     color: #ffffff;
@@ -38,7 +39,7 @@ body {
 }
 
 .input-wrapper {
-    width: 370px;
+    width: 570px;
     height: 60px;
     position: relative;
 }
@@ -139,7 +140,7 @@ body {
 /* submit btn */
 
 .btn.go-homepage {
-    width: 370px;
+    width: fit-content;
     word-wrap: normal;
 }
 
@@ -224,17 +225,19 @@ body {
     height: 100%;
     top: 0;
     left: 0;
-    background: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all .5s ease-in;
-    -webkit-transition: all .5s ease-in;
-    -moz-transition: all .5s ease-in;
-    -ms-transition: all .5s ease-in;
-    -o-transition: all .5s ease-in;
+    overflow: hidden;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    transition: backdrop-filter .5s ease-in-out, background-color .5s ease-in-out;
+    -webkit-transition: backdrop-filter .5s ease-in-out, background-color .5s ease-in-out;
+    -moz-transition: backdrop-filter .5s ease-in-out, background-color .5s ease-in-out;
+    -ms-transition: backdrop-filter .5s ease-in-out, background-color .5s ease-in-out;
+    -o-transition: backdrop-filter .5s ease-in-out, background-color .5s ease-in-out;
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 .modal-overlay.open {
@@ -255,13 +258,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    transition: all .5s ease-in-out;
-    -webkit-transition: all .5s ease-in-out;
-    -moz-transition: all .5s ease-in-out;
-    -ms-transition: all .5s ease-in-out;
-    -o-transition: all .5s ease-in-out;
+    padding: 60px 0;
+    transition: backdrop-filter .5s ease-in-out, background-color .5s ease-in-out;
+    -webkit-transition: backdrop-filter .5s ease-in-out, background-color .5s ease-in-out;
+    -moz-transition: backdrop-filter .5s ease-in-out, background-color .5s ease-in-out;
+    -ms-transition: backdrop-filter .5s ease-in-out, background-color .5s ease-in-out;
+    -o-transition: backdrop-filter .5s ease-in-out, background-color .5s ease-in-out;
     -webkit-transform: translate(-50%, -50%) scale(1);
     -moz-transform: translate(-50%, -50%) scale(1);
     -ms-transform: translate(-50%, -50%) scale(1);
@@ -309,4 +311,210 @@ body {
     bottom: 0;
     right: 10px;
     transform: translateY(50%);
+}
+
+/* media queries */
+
+/* portrait , Ipad*/
+@media screen and (min-width: 768px) and (max-width: 918px) and (min-height: 844px) {
+    .popup-container {
+        justify-content: center;
+    }
+
+    .modal-overlay {
+        overflow: hidden;
+    }
+
+    .text {
+        margin: 0vh 0vh 8vh 0vh;
+    }
+
+    .input {
+        height: 35px;
+        font-size: 19px;
+    }
+
+    .btn {
+        margin-top: 90px;
+    }
+
+    .btn.go-homepage {
+        margin-top: 50px;
+    }
+
+    .modal {
+        transform: translate(-50%, -60%) scale(1);
+        -webkit-transform: translate(-50%, -60%) scale(1);
+        -moz-transform: translate(-50%, -60%) scale(1);
+        -ms-transform: translate(-50%, -60%) scale(1);
+        -o-transform: translate(-50%, -60%) scale(1);
+    }
+
+}
+
+/* landscape (mobile)*/
+@media screen and (max-width: 915px) and (max-height: 500px) {
+    .modal-overlay {
+        overflow: hidden;
+    }
+
+    .popup-container {
+        overflow: auto;
+        padding-bottom: 20px;
+    }
+}
+
+/* portrait */
+@media screen and (max-width: 767px) and (min-height: 500px) {
+    .input-wrapper {
+        width: 370px;
+    }
+}
+
+/* portrait */
+@media screen and (max-width: 414px) and (min-height: 896px) {
+    .input-wrapper {
+        width: 290px;
+    }
+
+    .modal {
+        width: 300px;
+        padding: 40px 0px;
+    }
+
+    .modal:before {
+        height: 45px;
+    }
+
+    .modal:after {
+        height: 45px;
+    }
+
+    .btn.go-homepage {
+        padding: 0px 45px;
+        margin-top: 30px;
+    }
+
+    .btn:before {
+        margin-left: -30px;
+    }
+}
+
+/* desktop */
+@media screen and (max-width: 600px) {
+    .modal {
+        width: 320px;
+        padding: 40px 0px;
+    }
+
+    .modal:before {
+        height: 45px;
+    }
+
+    .modal:after {
+        height: 45px;
+    }
+
+    .btn.go-homepage {
+        padding: 0px 45px;
+        margin-top: 30px;
+    }
+
+    .btn:before {
+        margin-left: -30px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .input-wrapper {
+        width: 300px;
+    }
+
+    .modal {
+        width: 300px;
+        padding: 40px 0px;
+    }
+
+    .modal:before {
+        height: 45px;
+    }
+
+    .modal:after {
+        height: 45px;
+    }
+
+    .btn.go-homepage {
+        padding: 0px 45px;
+        margin-top: 30px;
+    }
+
+    .btn:before {
+        margin-left: -30px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .modal {
+        width: 250px;
+        padding: 25px 0px;
+    }
+
+    .modal:before {
+        height: 35px;
+    }
+
+    .modal:after {
+        height: 35px;
+    }
+
+    .btn {
+        width: 250px;
+    }
+
+    .btn.go-homepage {
+        padding: 0px 45px;
+        margin-top: 30px;
+    }
+
+    .btn.go-homepage span {
+        font-size: 13px;
+    }
+
+    .btn:before {
+        margin-left: -30px;
+    }
+
+    .modal-title {
+        font-size: 23px;
+    }
+
+    .text {
+        width: fit-content;
+        font-size: 15px;
+    }
+
+    .input-wrapper {
+        width: 260px;
+    }
+
+    .label {
+        font-size: 16px;
+    }
+
+}
+
+@media screen and (max-width: 653px) and (max-height: 300px) {
+    .modal {
+        width: 350px;
+        padding: 25px 0px;
+    }
+
+    .modal:before {
+        height: 45px;
+    }
+
+    .modal:after {
+        height: 45px;
+    }
+
 }
