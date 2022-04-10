@@ -10,6 +10,7 @@ const modalOverlay = document.querySelector('.modal-overlay');
 const modal = document.querySelector('.modal');
 const btnGoHomepage = document.querySelector('.go-homepage');
 const pop = document.querySelector('.pop');
+const popupContainer = document.querySelector('.popup-container');
 
 
 const regExpValidName = /^[a-zA-ZА-Яа-я\s]+$/;
@@ -64,7 +65,7 @@ const validData = {
       form.addEventListener('submit', (event) => {
         event.preventDefault();
         modalOverlay.classList.add('open');
-
+        popupContainer.classList.add('is-invisible');
       });
     }
 
