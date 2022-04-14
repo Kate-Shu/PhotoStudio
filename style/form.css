@@ -247,11 +247,16 @@ body {
     -o-transition: backdrop-filter .5s ease-in-out, background-color .5s ease-in-out;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    -moz-backdrop-filter: blur(20px);
+    -ms-backdrop-filter: blur(20px);
+    -o-backdrop-filter: blur(20px);
+
 }
 
 .modal-overlay.open {
     visibility: visible;
     opacity: 1;
+    position: fixed;
 }
 
 .modal {

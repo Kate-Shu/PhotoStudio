@@ -31,6 +31,7 @@ body {
     margin: 0;
     color: #3a3a3a;
     opacity: 80%;
+    white-space: nowrap;
 }
 
 .content {
@@ -773,6 +774,14 @@ body {
 
     .row-text {
         min-width: 50%;
+    }
+
+    .main-logo-content {
+        font-size: 1.5em;
+    }
+
+    .supTitle {
+        font-size: 20px;
     }
 }
 
